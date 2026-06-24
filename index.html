@@ -789,8 +789,31 @@ a.link-internal:hover {
     white-space: normal;
   }
   .phone-shell {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     min-height: 520px;
     height: 72vh;
+    margin: 12px auto;
+    border-radius: 26px;
+  }
+  .phone-top {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .phone-title {
+    padding: 12px 14px;
+  }
+  .phone-chat {
+    padding: 14px 12px;
+  }
+  .phone-shell .msg {
+    max-width: 82%;
+  }
+  .phone-compose {
+    box-sizing: border-box;
+    width: calc(100% - 24px);
+    margin: 6px 12px 8px;
   }
   #stats-btn {
     left: 8px;
