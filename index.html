@@ -768,9 +768,9 @@ a.link-internal:hover {
     width: 100%;
     max-width: none;
     margin: 10px auto 28px;
-    padding: 18px 14px 24px;
+    padding: 14px 8px 22px;
     min-height: auto;
-    border-radius: 20px;
+    border-radius: 18px;
     font-size: 16px;
     line-height: 1.82;
   }
@@ -794,26 +794,92 @@ a.link-internal:hover {
     max-width: 100%;
     min-height: 520px;
     height: 72vh;
-    margin: 12px auto;
-    border-radius: 26px;
+    margin: 10px auto;
+    border-radius: 24px;
   }
-  .phone-top {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .phone-title {
-    padding: 12px 14px;
+  .phone-status,
+  .phone-titlebar {
+    padding-left: 14px;
+    padding-right: 14px;
   }
   .phone-chat {
-    padding: 14px 12px;
+    padding: 12px 10px;
   }
   .phone-shell .msg {
-    max-width: 82%;
+    box-sizing: border-box;
+    max-width: 84%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .phone-shell .msg.image-msg {
+    max-width: 84%;
+    min-width: 0;
+    min-height: 0;
+    padding: 8px;
+  }
+  .phone-shell .msg.image-msg img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 190px;
+    object-fit: contain;
   }
   .phone-compose {
     box-sizing: border-box;
     width: calc(100% - 24px);
     margin: 6px 12px 8px;
+  }
+  .phone-action-row {
+    padding: 8px 10px 12px;
+  }
+  .phone-action-row a.link-internal,
+  .phone-complete-outside a.link-internal {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ticket-app,
+  .image-lightbox-inline {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 12px;
+    border-radius: 22px;
+  }
+  .ticket-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+  .ticket-result {
+    min-height: 0;
+    font-size: 15px;
+  }
+  .sns-app.phone-shell {
+    min-height: 560px;
+    height: 74vh;
+  }
+  .sns-profile,
+  .sns-compose,
+  .sns-feed {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .sns-compose-box,
+  .sns-post,
+  .sns-inbox-card {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+  }
+  .hairclip-card {
+    box-sizing: border-box;
+    width: min(210px, 82%);
+    padding: 14px;
+  }
+  .hairclip-card.large {
+    width: 100%;
+    min-height: 180px;
   }
   #stats-btn {
     left: 8px;
