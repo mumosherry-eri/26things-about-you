@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="关于你的26个变数" startnode="44" creator="Twine" creator-version="2.10.0" format="SugarCube" format-version="2.37.3" ifid="AE5BC4B2-E429-41F4-81D0-D94D79790019" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html, body {
+	<tw-storydata name="关于你的26个变数" startnode="55" creator="Twine" creator-version="2.10.0" format="SugarCube" format-version="2.37.3" ifid="AE5BC4B2-E429-41F4-81D0-D94D79790019" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html, body {
   min-height: 100%;
 }
 
@@ -993,6 +993,13 @@ a.link-internal:hover {
   font-size: 12px;
 }
 
+.sns-avatar.empty {
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,.08), transparent 24%),
+    linear-gradient(135deg, #09090d, #000);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), 0 10px 24px rgba(0,0,0,.24);
+}
+
 .sns-profile-name,
 .sns-name,
 .sns-thread-card strong {
@@ -1059,7 +1066,155 @@ a.link-internal:hover {
   margin-top: 10px;
   color: rgba(255,255,255,.94);
   line-height: 1.65;
+  white-space: pre-wrap;
   overflow-wrap: break-word;
+}
+
+.sns-image-card,
+.drown-scene-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 12px;
+  display: grid;
+  place-items: end start;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.48)),
+    var(--sns-img),
+    radial-gradient(circle at 20% 20%, rgba(255, 139, 76, .36), transparent 26%),
+    radial-gradient(circle at 80% 35%, rgba(113, 77, 255, .3), transparent 32%),
+    linear-gradient(135deg, #222536, #0b0d15);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.sns-image-card span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.42);
+  color: rgba(255,255,255,.9);
+  font-size: 12px;
+}
+
+.sns-repost {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 13px;
+  background: rgba(255,255,255,.075);
+  color: rgba(255,255,255,.72);
+  line-height: 1.55;
+}
+
+.sns-repost p {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+}
+
+.sns-notice-pill {
+  justify-self: center;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255, 130, 77, .18);
+  color: #ffd2bd;
+  font-size: 12px;
+}
+
+.sns-profile-page {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.sns-profile-hero {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 4px 6px;
+}
+
+.sns-profile-main {
+  min-width: 0;
+}
+
+.sns-profile-main strong,
+.sns-profile-main span {
+  display: block;
+}
+
+.sns-profile-main span {
+  margin-top: 3px;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+}
+
+.sns-action.compact {
+  width: auto;
+  min-width: 76px;
+  padding: 9px 12px;
+}
+
+.sns-profile-bio,
+.sns-profile-stats,
+.sns-empty-state {
+  padding: 11px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.72);
+}
+
+.sns-profile-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.sns-empty-state {
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.42);
+}
+
+.yizhou-phone.phone-shell,
+.phone-shell.yizhou-phone {
+  border-color: rgba(255, 151, 77, .34);
+  background:
+    linear-gradient(180deg, rgba(28, 17, 13, .98), rgba(7, 8, 13, .98)),
+    radial-gradient(circle at 70% 0%, rgba(255, 139, 76, .28), transparent 38%),
+    radial-gradient(circle at 8% 26%, rgba(128, 81, 255, .24), transparent 32%);
+  box-shadow: 0 24px 70px rgba(0,0,0,.55), inset 0 0 0 8px rgba(105, 44, 16, .28);
+}
+
+.drown-scene-card {
+  width: min(620px, 100%);
+  margin: 18px auto;
+  aspect-ratio: 16 / 8;
+}
+
+.drown-rehearsal-fallback {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.56)),
+    var(--sns-img),
+    radial-gradient(circle at 18% 58%, rgba(255,255,255,.18), transparent 4%),
+    radial-gradient(circle at 42% 48%, rgba(40, 205, 220, .22), transparent 14%),
+    radial-gradient(circle at 76% 22%, rgba(255, 139, 76, .3), transparent 22%),
+    linear-gradient(135deg, #25263a, #080a12);
+}
+
+.drown-room-fallback {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.62)),
+    var(--sns-img),
+    radial-gradient(circle at 26% 70%, rgba(255, 112, 70, .28), transparent 18%),
+    radial-gradient(circle at 72% 28%, rgba(121, 80, 255, .28), transparent 24%),
+    linear-gradient(135deg, #2a242b, #090a0f);
 }
 
 .sns-actionbar {
@@ -1231,6 +1386,39 @@ a.link-internal:hover {
 
 .caleb-eye-flash.blackout img {
   margin-top: -6vh;
+}
+
+@media (max-width: 640px) {
+  .sns-phone.phone-shell,
+  .phone-shell.yizhou-phone {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-height: 520px;
+    height: 72vh;
+  }
+
+  .sns-profile-hero {
+    grid-template-columns: 46px 1fr;
+  }
+
+  .sns-profile-hero .sns-action {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .sns-image-card {
+    border-radius: 13px;
+    padding: 10px;
+  }
+
+  .sns-profile-stats {
+    flex-wrap: wrap;
+  }
+
+  .drown-scene-card {
+    aspect-ratio: 16 / 10;
+  }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* === 工具：根据数值返回阴暗度标签 === */
 function getDarkLabel(dk){
   if (dk <= 20) return '？？？';
@@ -1439,18 +1627,20 @@ window.renderSnsApp = function(config){
     meta: 'Skyline Horizon 现场记录'
   }, config.user || {});
   const view = config.view || 'feed';
-  const activeTab = config.activeTab || (view === 'messages' || view === 'thread' ? 'messages' : 'home');
+  const activeTab = config.activeTab || (view === 'messages' || view === 'thread' ? 'messages' : (view === 'profile' ? 'profile' : 'home'));
   const titleMap = {
     compose: '发微博',
     feed: '首页',
     notifications: '消息',
     messages: '消息',
+    profile: '个人主页',
     thread: config.contact || '私信'
   };
 
   function avatarHTML(profile, small){
     const p = Object.assign(user, profile || {});
-    return `<div class="sns-avatar${small ? ' small' : ''}">${escapeHTML(p.avatar || p.name || '你').slice(0, 2)}</div>`;
+    const empty = p.avatar === '';
+    return `<div class="sns-avatar${small ? ' small' : ''}${empty ? ' empty' : ''}">${empty ? '' : escapeHTML(p.avatar || p.name || '你').slice(0, 2)}</div>`;
   }
 
   function actionButton(action, extraClass){
@@ -1483,6 +1673,18 @@ window.renderSnsApp = function(config){
       </div>`;
   }
 
+  function imageCardHTML(image){
+    if (!image) return '';
+    const cls = image.fallbackClass ? ` ${escapeHTML(image.fallbackClass)}` : '';
+    const src = image.src ? ` style="--sns-img:url('${escapeHTML(image.src)}')"` : '';
+    return `<div class="sns-image-card${cls}"${src}><span>${escapeHTML(image.title || '图片')}</span></div>`;
+  }
+
+  function repostHTML(repost){
+    if (!repost) return '';
+    return `<div class="sns-repost"><strong>${escapeHTML(repost.author || '')}</strong><p>${escapeHTML(repost.text || '')}</p></div>`;
+  }
+
   function postHTML(post){
     const p = Object.assign({
       author: user.name,
@@ -1504,6 +1706,8 @@ window.renderSnsApp = function(config){
           </div>
         </div>
         <div class="sns-text">${escapeHTML(p.text || '')}</div>
+        ${imageCardHTML(p.image)}
+        ${repostHTML(p.repostOf)}
         <div class="sns-actionbar">
           <span>转发 ${escapeHTML(p.reposts)}</span>
           <span>评论 ${escapeHTML(p.comments)}</span>
@@ -1525,6 +1729,7 @@ window.renderSnsApp = function(config){
         </div>
         <div class="sns-editor">
           <div class="sns-editor-text">${escapeHTML(config.composeText || '')}</div>
+          ${repostHTML(config.repostOf)}
           <div class="sns-tool-row"><span>图片</span><span># 话题</span><span>位置</span><span>公开</span></div>
         </div>
         ${actionButton(config.primaryAction, 'primary')}
@@ -1537,6 +1742,7 @@ window.renderSnsApp = function(config){
     return `
       ${topbarHTML()}
       <div class="sns-scroll sns-feed">
+        ${config.topNotice ? `<div class="sns-notice-pill">${escapeHTML(config.topNotice)}</div>` : ''}
         <div class="sns-profile-strip compact">
           ${avatarHTML(user)}
           <div>
@@ -1551,6 +1757,40 @@ window.renderSnsApp = function(config){
             <span><strong>${escapeHTML(config.messageAction.title || '私信')}</strong><em>${escapeHTML(config.messageAction.preview || '')}</em></span>
             <b>${escapeHTML(config.messageAction.badge || '1')}</b>
           </button>` : ''}
+        ${(config.items || []).map(item => `
+          <div class="sns-thread-card ${item.unread ? 'unread' : ''}">
+            ${avatarHTML(item.profile || {}, true)}
+            <span><strong>${escapeHTML(item.title || '')}</strong><em>${escapeHTML(item.preview || '')}</em></span>
+            ${item.badge ? `<b>${escapeHTML(item.badge)}</b>` : ''}
+          </div>`).join('')}
+      </div>
+      ${navHTML()}`;
+  }
+
+  function profileHTML(){
+    const profile = Object.assign({
+      name: user.name,
+      avatar: user.avatar,
+      handle: user.handle,
+      meta: user.meta,
+      bio: '',
+      stats: ['0 关注', '0 粉丝', '0 动态'],
+      emptyText: '还没有发布任何内容'
+    }, config.profile || {});
+    return `
+      ${topbarHTML()}
+      <div class="sns-scroll sns-profile-page">
+        <div class="sns-profile-hero">
+          <div class="sns-profile-avatar">${avatarHTML(profile)}</div>
+          <div class="sns-profile-main">
+            <strong>${escapeHTML(profile.name)}</strong>
+            <span>${escapeHTML(profile.handle || '')}</span>
+          </div>
+          ${actionButton(config.profileAction, 'primary compact')}
+        </div>
+        <div class="sns-profile-bio">${escapeHTML(profile.bio || profile.meta || '')}</div>
+        <div class="sns-profile-stats">${(profile.stats || []).map(s => `<span>${escapeHTML(s)}</span>`).join('')}</div>
+        <div class="sns-empty-state">${escapeHTML(profile.emptyText || '')}</div>
       </div>
       ${navHTML()}`;
   }
@@ -1591,6 +1831,7 @@ window.renderSnsApp = function(config){
     feed: feedHTML,
     notifications: notificationsHTML,
     messages: notificationsHTML,
+    profile: profileHTML,
     thread: threadHTML
   };
 
@@ -1598,7 +1839,7 @@ window.renderSnsApp = function(config){
   root.innerHTML = (renderers[view] || feedHTML)();
 
   const actions = {};
-  (config.actions || []).concat(config.primaryAction || [], config.secondaryAction || [], config.messageAction || [], config.items || [])
+  (config.actions || []).concat(config.primaryAction || [], config.secondaryAction || [], config.messageAction || [], config.profileAction || [], config.items || [])
     .filter(Boolean)
     .forEach(action => {
       const id = action.id || action.action;
@@ -1635,6 +1876,17 @@ window.ensureCalebChapterState = function(){
   if (vars.calebHairclipViewed === undefined) vars.calebHairclipViewed = false;
   if (vars.calebFirstReplySent === undefined) vars.calebFirstReplySent = false;
   if (vars.calebEyeFlashBlackout === undefined) vars.calebEyeFlashBlackout = false;
+};
+
+window.ensureDrownChapterState = function(){
+  const vars = State.variables;
+  if (vars.drownOfficialSeen === undefined) vars.drownOfficialSeen = false;
+  if (vars.drownPracticePhotoViewed === undefined) vars.drownPracticePhotoViewed = false;
+  if (vars.drownYizhouAccountSeen === undefined) vars.drownYizhouAccountSeen = false;
+  if (vars.drownYizhouFollowed === undefined) vars.drownYizhouFollowed = false;
+  if (vars.drownLotteryReposted === undefined) vars.drownLotteryReposted = false;
+  if (vars.drownCalebJealousRead === undefined) vars.drownCalebJealousRead = false;
+  if (vars.drownYizhouPostSeen === undefined) vars.drownYizhouPostSeen = false;
 };
 
 window.showCalebEyeFlash = function(done){
@@ -1832,7 +2084,7 @@ $(document).on(':passagedisplay', function () {
   if (current.darkness > window.lastStats.darkness) changes.push(getDarkLabel(current.darkness) + ' +' + (current.darkness - window.lastStats.darkness));
   window.lastStats = current;
   if (changes.length) showPhoneToast(changes.join(' / '), 'stat');
-});</script><tw-tag name="widgets" color="red"></tw-tag><tw-tag name="widget" color="red"></tw-tag><tw-passagedata pid="1" name="Ambitious_A1" tags="" position="400,450" size="100,100">你站在台下，被角落里的帅气鼓手吸引。  
+});</script><tw-passagedata pid="1" name="Ambitious_A1" tags="" position="400,450" size="100,100">你站在台下，被角落里的帅气鼓手吸引。  
 手长脚长打起鼓来帅得毫不费力。他坐在鼓后，细长的手腕在镲片与鼓面之间精准地落下每一次击打，像是在和节拍较劲，又像是在驯服一头躁动的野兽。每一次抬手，鼓棒都在空中划出优雅的弧线，然后重重地落下去，敲击在鼓面上，也和上了你的心跳节奏。在每首曲子结束的时候，他会微微仰头，习惯性地在指尖转一圈鼓棒。
 
 [[继续-&gt;Ambitious_A2]]</tw-passagedata><tw-passagedata pid="2" name="Ambitious_A2" tags="" position="400,575" size="100,100">灯光切换的瞬间，他的侧脸从阴影里浮现出来，鼻梁锋利，唇线薄而冷。明明隔得很远，你却真真切切地看到那双浓得化不开的紫色眼眸直直地望向你。一瞬间，你忘了呼吸，仿佛整个场内只有你和他两人对视的那条无声的线。  
@@ -1856,7 +2108,7 @@ $(document).on(':passagedisplay', function () {
 眼神重新飘回舞台的时候，发现夏以昼已经不在了。你有些遗憾，还想多看几眼帅哥的。
 
 正出神时，背后被人轻轻撞了一下。你转过头，鼻梁撞上了人西装绑带的金属扣，你捂着鼻子抬起头——那双紫色的眼眸正满是担忧地看着你。
-&lt;&lt;run addMemo(&quot;第一次在吧台与夏以昼对视，那双紫色眼睛直直望向你。&quot;)&gt;&gt;
+&lt;&lt;run addMemo("第一次在吧台与夏以昼对视，那双紫色眼睛直直望向你。")&gt;&gt;
 
 “抱歉，你还好吗？”他的声音意外地爽朗。  
 你赶紧摆手：“没事。我……很喜欢今晚的演出，尤其是你的鼓。”  
@@ -1869,7 +2121,7 @@ $(document).on(':passagedisplay', function () {
 - [[关注-&gt;Ambitious_Follow]]  
 - [[示意了解，但先不关注-&gt;Ambitious_Home]]</tw-passagedata><tw-passagedata pid="5" name="Ambitious_Follow" tags="" position="287.5,950" size="100,100">&lt;&lt;set $favorYizhou += 1&gt;&gt; 
 你记下了id，在自己的社交平台上搜索并且点了关注。他把手机收回时，空气间残留着混合了酒精、汗水与皮革调香水的气息，像一条细细的线，把眼前的人和舞台那个遥远的身影系在了一起。
-&lt;&lt;run addMemo(&quot;演出时的夏以昼似乎用皮革调的香水。&quot;)&gt;&gt;
+&lt;&lt;run addMemo("演出时的夏以昼似乎用皮革调的香水。")&gt;&gt;
 他很快被团员喊走，背影消失在人群中。
 - [[回家-&gt;Ambitious_Home]]</tw-passagedata><tw-passagedata pid="6" name="Ambitious_Home" tags="" position="425,1075" size="100,100">Skyline Horizon的演出结束了，朋友也不知道去哪浪，根本找不见人影，你有些累了。喝完杯子里最后一口，收拾好包走出酒吧。微凉的夜风把在店里的燥热吹得一干二净，耳中依旧嗡嗡作响。你慢悠悠走在街上，回味着夏以昼的模样与气息。
 
@@ -1879,7 +2131,7 @@ $(document).on(':passagedisplay', function () {
 
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
 
-&lt;div id=&quot;ambitious-sns-home&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="ambitious-sns-home" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'ambitious-sns-home',
   view: 'notifications',
@@ -1907,7 +2159,7 @@ $(document).on(':passagedisplay', function () {
 
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
 
-&lt;div id=&quot;ambitious-sns-noconnect&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="ambitious-sns-noconnect" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'ambitious-sns-noconnect',
   view: 'notifications',
@@ -1940,37 +2192,37 @@ $(document).on(':passagedisplay', function () {
 &lt;&lt;if $draws is undefined&gt;&gt;&lt;&lt;set $draws = 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $wins  is undefined&gt;&gt;&lt;&lt;set $wins  = 0&gt;&gt;&lt;&lt;/if&gt;&gt;
 
-&lt;div class=&quot;ticket-app&quot;&gt;
-  &lt;div class=&quot;ticket-head&quot;&gt;
+&lt;div class="ticket-app"&gt;
+  &lt;div class="ticket-head"&gt;
     &lt;span&gt;Skyline Horizon&lt;/span&gt;
     &lt;strong&gt;LIVE&lt;/strong&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;ticket-card&quot;&gt;
-    &lt;div class=&quot;ticket-date&quot;&gt;NEXT SHOW&lt;/div&gt;
-    &lt;div class=&quot;ticket-title&quot;&gt;第二场演出&lt;/div&gt;
-    &lt;div class=&quot;ticket-meta&quot;&gt;前排余票刷新中&lt;/div&gt;
+  &lt;div class="ticket-card"&gt;
+    &lt;div class="ticket-date"&gt;NEXT SHOW&lt;/div&gt;
+    &lt;div class="ticket-title"&gt;第二场演出&lt;/div&gt;
+    &lt;div class="ticket-meta"&gt;前排余票刷新中&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div id=&quot;draw-result&quot; class=&quot;ticket-result&quot;&gt;点击下方按钮抽票（70% 概率）。&lt;/div&gt;
-&lt;&lt;button &quot;开始抢票&quot;&gt;&gt;
+  &lt;div id="draw-result" class="ticket-result"&gt;点击下方按钮抽票（70% 概率）。&lt;/div&gt;
+&lt;&lt;button "开始抢票"&gt;&gt;
 	&lt;&lt;set $draws += 1&gt;&gt;
 	&lt;&lt;set _roll to random(1,100)&gt;&gt;
-	&lt;&lt;replace &quot;#draw-result&quot;&gt;&gt;&lt;div class=&quot;ticket-loading&quot;&gt;正在连接票务系统……&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
+	&lt;&lt;replace "#draw-result"&gt;&gt;&lt;div class="ticket-loading"&gt;正在连接票务系统……&lt;/div&gt;&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;if _roll &lt;= 70&gt;&gt;
 		&lt;&lt;set $wins += 1&gt;&gt;
-		&lt;&lt;replace &quot;#draw-result&quot;&gt;&gt;
-		&lt;div class=&quot;ticket-success&quot;&gt;✅ 恭喜抢到！（本次: &lt;&lt;= _roll &gt;&gt;）&lt;/div&gt;
-		&lt;br&gt;&lt;span class=&quot;ticket-count&quot;&gt;已抢 &lt;&lt;= $draws &gt;&gt; 次，抢到 &lt;&lt;= $wins &gt;&gt; 次。&lt;/span&gt;
+		&lt;&lt;replace "#draw-result"&gt;&gt;
+		&lt;div class="ticket-success"&gt;✅ 恭喜抢到！（本次: &lt;&lt;= _roll &gt;&gt;）&lt;/div&gt;
+		&lt;br&gt;&lt;span class="ticket-count"&gt;已抢 &lt;&lt;= $draws &gt;&gt; 次，抢到 &lt;&lt;= $wins &gt;&gt; 次。&lt;/span&gt;
 		&lt;&lt;/replace&gt;&gt;
-		&lt;&lt;replace &quot;#ticket-continue&quot;&gt;&gt;[[继续-&gt;Blur-A2]]&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;replace "#ticket-continue"&gt;&gt;[[继续-&gt;Blur-A2]]&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;replace &quot;#draw-result&quot;&gt;&gt;
-		&lt;div class=&quot;ticket-fail&quot;&gt;❌ 没抢到（本次: &lt;&lt;= _roll &gt;&gt;）。再试一次？&lt;/div&gt;
-		&lt;br&gt;&lt;span class=&quot;ticket-count&quot;&gt;已抢 &lt;&lt;= $draws &gt;&gt; 次，抢到 &lt;&lt;= $wins &gt;&gt; 次。&lt;/span&gt;
+		&lt;&lt;replace "#draw-result"&gt;&gt;
+		&lt;div class="ticket-fail"&gt;❌ 没抢到（本次: &lt;&lt;= _roll &gt;&gt;）。再试一次？&lt;/div&gt;
+		&lt;br&gt;&lt;span class="ticket-count"&gt;已抢 &lt;&lt;= $draws &gt;&gt; 次，抢到 &lt;&lt;= $wins &gt;&gt; 次。&lt;/span&gt;
 		&lt;&lt;/replace&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
-&lt;div id=&quot;ticket-continue&quot; class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Blur-A2" tags="" position="275,1950" size="100,100">&lt;&lt;set $favorCaleb += 5&gt;&gt;
+&lt;div id="ticket-continue" class="phone-complete phone-complete-outside"&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="Blur-A2" tags="" position="275,1950" size="100,100">&lt;&lt;set $favorCaleb += 5&gt;&gt;
 你跟Caleb关系变得热络了起来。虽然他的回复克制冷静，但是你总觉得他能精准地明白你的想法，还会给你分享一些其他人在网上也没说过的夏以昼的细节，比如他演出前喜欢喝加了柠檬汁的冰美式，喜欢在后台偷偷玩手机游戏。有了Caleb的细节补充，这些琐碎的小事像拼图碎片，夏以昼的形象不再只是你脑海中被烟雾蒙住的人形与视频中的侧影，渐渐拼凑成一个有血有肉的人。
 你在过去的练习视频中，好不容易截到了一张夏以昼打完鼓正面面对镜头的画面，有些模糊，但是紫色的眼睛清晰可见。你把这张截图设为了壁纸，对下一场演出抱有了无限的期待。
 [[第二场演出-&gt;Blur-A3]]</tw-passagedata><tw-passagedata pid="11" name="Blur-A3" tags="" position="450,1975" size="100,100">第二场演出如期而至。
@@ -1979,11 +2231,11 @@ $(document).on(':passagedisplay', function () {
 [[精心打扮-&gt;Blur-B1]]
 [[普通装扮-&gt;Blur-B2]]</tw-passagedata><tw-passagedata pid="12" name="Blur-B1" tags="" position="450,2100" size="100,100">&lt;&lt;set $favorYizhou += 2&gt;&gt; 
 &lt;&lt;set $darkness += 1&gt;&gt;
-&lt;&lt;set $path = &quot;fancy&quot;&gt;&gt; 
+&lt;&lt;set $path = "fancy"&gt;&gt; 
 
 你鬼使神差地精心打扮了一番，在朴素的牛仔外套下穿了件性感的露背包臀裙，甚至喷了许久未用的香水。你站在第二排，视线牢牢锁在夏以昼身上。他的鼓点像心跳，敲在你胸口，每一下都带着炽热的节奏。
 
-[[继续-&gt;Blur-C1]]</tw-passagedata><tw-passagedata pid="13" name="Blur-B2" tags="" position="575,2100" size="100,100">&lt;&lt;set $path = &quot;casual&quot;&gt;&gt;
+[[继续-&gt;Blur-C1]]</tw-passagedata><tw-passagedata pid="13" name="Blur-B2" tags="" position="575,2100" size="100,100">&lt;&lt;set $path = "casual"&gt;&gt;
 你站在第二排，视线牢牢锁在夏以昼身上。他的鼓点像心跳，敲在你胸口，每一下都带着炽热的节奏。
 [[继续-&gt;Blur-C1]]</tw-passagedata><tw-passagedata pid="14" name="Blur-C1" tags="" position="450,2225" size="100,100">灯光扫过舞台，他的紫色眸子在烟雾中时隐时现，你总觉得他的目光若有若无地飘向你，但是你又捕捉不到。你屏住呼吸，贪婪地用目光锁住夏以昼的每一个动作。演出结束，掌声如潮，你的心却还在鼓点里沉浮。
 乐队没有立刻离开，而是站在吧台一侧，看起了另一组乐队的表演。
@@ -2019,11 +2271,11 @@ $(document).on(':passagedisplay', function () {
 
 酒吧里灯光依旧炽烈，空气里是啤酒、香水和汗水交织的味道。你刚站好位置，舞台灯便亮起，低音鼓像心跳般砸下来。
 
-&lt;&lt;if $liveHabit is &quot;frontrow&quot;&gt;&gt;
+&lt;&lt;if $liveHabit is "frontrow"&gt;&gt;
 你下意识挤到熟悉的前排位置，发夹在发间稳稳地别着。离得近了，夏以昼眼尾的笑意、额角的汗意和鼓棒落下的力度都清晰得几乎烫人。
-&lt;&lt;elseif $liveHabit is &quot;side&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "side"&gt;&gt;
 你站在熟悉的侧边位置，看见他上台前低头调试耳返，指尖轻轻转过鼓棒，像往常一样朝观众席扫了一眼。
-&lt;&lt;elseif $liveHabit is &quot;replay&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "replay"&gt;&gt;
 你脑中还残留着旧演出和练习视频的节奏，几乎在第三首歌开头响起时，就开始期待他会不会又换掉某个处理。
 &lt;&lt;/if&gt;&gt;
 
@@ -2032,25 +2284,25 @@ $(document).on(':passagedisplay', function () {
 [[继续-&gt;Caleb-11]]</tw-passagedata><tw-passagedata pid="22" name="Caleb-11" tags="" position="725,4350" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
 你本想在间隙留意一下四周，看看能不能发现Caleb的影子，可下一秒，夏以昼在讲话后又立刻回到鼓后坐定，微微仰头，指尖转动着鼓棒，笑得明亮又轻松，像是发生了什么好事。
 
-&lt;&lt;if $liveHabit is &quot;frontrow&quot;&gt;&gt;
+&lt;&lt;if $liveHabit is "frontrow"&gt;&gt;
 你看得见他指节收紧又放松，鼓棒在指间转过一圈，眼尾那点亮意比舞台灯还要抓人。
-&lt;&lt;elseif $liveHabit is &quot;side&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "side"&gt;&gt;
 你从侧边看见他重新坐回鼓后，像开场前那样漫不经心地转着鼓棒，视线从人群中轻轻掠过。
-&lt;&lt;elseif $liveHabit is &quot;replay&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "replay"&gt;&gt;
 你甚至还在想第三首歌的solo和你反复刷过的版本到底差在哪里，可他的笑太明亮，把这个念头也一并冲散了。
 &lt;&lt;/if&gt;&gt;
 
 你也不自觉地笑了起来，原本的念头被彻底冲淡。演出结束，夏以昼依旧照例在收拾鼓棒前向你挥了挥手。直到走出演出现场，你带着被夏以昼迷得晕晕乎乎的脑子摸出手机。手机的屏幕刚好亮起，是Caleb。
 
-[[打开消息-&gt;Caleb-12]]</tw-passagedata><tw-passagedata pid="23" name="Caleb-12" tags="" position="725,4475" size="100,100">&lt;div id=&quot;chat-caleb12&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
+[[打开消息-&gt;Caleb-12]]</tw-passagedata><tw-passagedata pid="23" name="Caleb-12" tags="" position="725,4475" size="100,100">&lt;div id="chat-caleb12" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb12&quot;,
+  id: "chat-caleb12",
   messages: [
-    { who: &quot;left&quot;, text: &quot;今天的演出开心吗？你有没有觉得第三首歌的solo和之前有点不一样？&quot; }
+    { who: "left", text: "今天的演出开心吗？你有没有觉得第三首歌的solo和之前有点不一样？" }
   ],
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Caleb-13&quot;
+  nextText: "继续",
+  nextTarget: "Caleb-13"
 });
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="24" name="Caleb-13" tags="" position="725,4600" size="100,100">你怔了几秒，才意识到——你又一次忘了找Caleb。
 
@@ -2058,18 +2310,259 @@ renderPhoneChat({
 
 还好，发夹还在。
 
-第三章 Caleb 线结束。</tw-passagedata><tw-passagedata pid="25" name="Caleb-2" tags="" position="825,2975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
+[[继续-&gt;Drown-1]]</tw-passagedata><tw-passagedata pid="25" name="Drown-1" tags="" position="975,4600" size="100,100">&lt;&lt;run ensureDrownChapterState()&gt;&gt;
+“快看乐队官号，发了新活动！”
+
+午休时间，你本来在安安静静地吃饭，手机不停地震动，吸引了你的注意。拿起来一看，是Skyline Horizon的同好群在热烈地讨论着什么新活动。
+
+活动？自从你参加的第一场live，也过了近三个月，倒是没听说过他们有什么活动。你打开乐团的官方账号，发现十分钟前刚发了一条新帖子。
+
+[[继续-&gt;Drown-2]]</tw-passagedata><tw-passagedata pid="26" name="Drown-2" tags="" position="1125,4600" size="100,100">&lt;&lt;run ensureDrownChapterState()&gt;&gt;
+&lt;&lt;set $drownOfficialSeen = true&gt;&gt;
+&lt;div id="drown2-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown2-sns',
+  view: 'feed',
+  title: 'Skyline Horizon',
+  time: '12:18',
+  battery: '64%',
+  activeTab: 'home',
+  user: { name: 'Skyline_Horizon_Official', avatar: 'SH', handle: '@SkylineHorizon', meta: 'Skyline Horizon 官方账号' },
+  posts: [
+    {
+      author: 'Skyline_Horizon_Official',
+      avatar: 'SH',
+      handle: '@SkylineHorizon',
+      time: '10分钟前',
+      source: '官方账号',
+      text: '🎁 转发抽奖 | 下一场演出《后台一日游》🎁\n想看看我们后台的真实样子吗？\n想挑一位成员陪你逛后台、讲讲舞台背后的秘密吗？\n\n机会来了——\n奖品：1 位幸运观众 🎫 获得 后台全程参观 + 成员陪同讲解 + 合影签名\n\n参与方式：\n🔹 关注 @SkylineHorizon\n🔹 转推本条并@你最喜欢的乐队成员\n\n开奖时间：📅 xx月xx日 20:00\n后台等你来玩。\n\n#SkylineHorizon #后台一日游 #LiveHouse',
+      reposts: 262,
+      comments: 89,
+      likes: 1108
+    }
+  ]
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+
+&lt;div class="phone-complete phone-complete-outside"&gt;[[继续-&gt;Drown-3]]&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Drown-3" tags="" position="1275,4600" size="100,100">&lt;&lt;set $drownPracticePhotoViewed = true&gt;&gt;
+后台？你瞪大了眼睛。而且还可以选成员，那岂不是可以和夏以昼一起？
+
+还没来得及幻想，首页又跳出了乐团小号的帖子，是一张练习室的合照。夏以昼懒散地靠在鼓架后，难得露出全脸。你忍不住放大图片，盯着他的脸看了又看，嘴角忍不住露出笑意。
+
+他在对着镜头wink。
+
+&lt;div id="drown3-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown3-sns',
+  view: 'feed',
+  title: '首页',
+  time: '12:20',
+  battery: '63%',
+  user: { name: '你', avatar: '你', handle: '@live_notes', meta: 'Skyline Horizon 现场记录' },
+  posts: [
+    {
+      author: 'Skyline Horizon 小号',
+      avatar: 'SH',
+      handle: '@skyline_backstage',
+      time: '刚刚',
+      source: '练习室',
+      text: '练习结束。后天见。',
+      image: { title: '练习室合照', src: 'assets/drown-rehearsal-bg.jpg', fallbackClass: 'drown-rehearsal-fallback' },
+      reposts: 41,
+      comments: 26,
+      likes: 398
+    }
+  ]
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+
+你把相片保存，把夏以昼单独截了出来，看了又看，还是感觉十分喜欢。
+
+[[继续-&gt;Drown-4]]</tw-passagedata><tw-passagedata pid="28" name="Drown-4" tags="" position="1425,4600" size="100,100">&lt;div id="drown4-chat" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderPhoneChat({
+  id: 'drown4-chat',
+  messages: [
+    { who: 'left', text: '新活动看到了吗？' },
+    { who: 'right', text: '！！！！！我看到了！！' },
+    { who: 'right', text: '我要转发！我要去后台见夏以昼555555' },
+    { who: 'right', text: '你怎么没转？' },
+    { who: 'left', text: '我一般都压点到，没什么时间。' },
+    { who: 'right', text: '那很好了，少一个人跟我抢夏以昼的名额。' },
+    { who: 'right', text: '黄豆搓手.jpg' },
+    { who: 'left', text: '等一下，夏以昼有号吗？' }
+  ],
+  nextText: '继续',
+  nextTarget: 'Drown-5'
+})&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="Drown-5" tags="" position="1575,4600" size="100,100">乐队其他成员是有自己的账号的，没有做认证，因为粉丝不是那么多，更像个喜欢音乐的普通人的账号。你在刚开始迷上Skyline Horizon的时候，把每个成员从成团到现在的个人账号都翻了个底朝天，就为了看看有没有夏以昼的影子。但是夏以昼从来不露脸，偶尔有全脸出现也是视频扫过的一瞬间。
+
+你满心疑惑地点开乐团的官方账号，想确认是不是自己错过了什么，结果发现关注列表里赫然多了一个新账号。
+
+几乎同时，Caleb也发来了一个账户链接，你点开，就是乐团新增的关注账号。
+
+是夏以昼今天新开的账号。头像是一团黑，除了id是夏以昼，其余都是干干净净的。
+
+[[继续-&gt;Drown-6]]</tw-passagedata><tw-passagedata pid="30" name="Drown-6" tags="" position="1725,4600" size="100,100">&lt;&lt;run ensureDrownChapterState()&gt;&gt;
+&lt;&lt;set $drownYizhouAccountSeen = true&gt;&gt;
+&lt;div id="drown6-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown6-sns',
+  view: 'profile',
+  title: '个人主页',
+  time: '12:24',
+  battery: '62%',
+  activeTab: 'profile',
+  profile: {
+    name: '夏以昼',
+    avatar: '',
+    handle: '@xia_yizhou',
+    meta: '今天加入',
+    bio: '',
+    stats: ['0 关注', '0 粉丝', '0 动态'],
+    emptyText: '还没有发布任何内容'
+  },
+  profileAction: State.variables.drownYizhouFollowed ? null : {
+    id: 'follow-yizhou',
+    label: '关注',
+    setVars: { drownYizhouFollowed: true, drownYizhouAccountSeen: true },
+    goto: 'Drown-7'
+  }
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+
+&lt;&lt;if $drownYizhouFollowed&gt;&gt;
+&lt;div class="phone-complete phone-complete-outside"&gt;[[继续-&gt;Drown-7]]&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Drown-7" tags="" position="1875,4600" size="100,100">&lt;&lt;run ensureDrownChapterState()&gt;&gt;
+&lt;&lt;if not $drownLotteryReposted&gt;&gt;
+&lt;&lt;set $drownYizhouFollowed = true&gt;&gt;
+&lt;div id="drown7-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown7-sns',
+  view: 'compose',
+  title: '转发',
+  time: '12:25',
+  battery: '62%',
+  activeTab: 'home',
+  user: { name: '你', avatar: '你', handle: '@live_notes', meta: 'Skyline Horizon 现场记录' },
+  composeText: '@夏以昼',
+  repostOf: {
+    author: 'Skyline_Horizon_Official',
+    avatar: 'SH',
+    text: '🎁 转发抽奖 | 下一场演出《后台一日游》🎁'
+  },
+  primaryAction: {
+    id: 'repost-lottery',
+    label: '转发',
+    setVars: { drownLotteryReposted: true },
+    goto: 'Drown-7'
+  }
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+&lt;&lt;elseif not $drownCalebJealousRead&gt;&gt;
+你立刻按下关注，然后转发了官方账号的活动帖子：@夏以昼。
+
+&lt;div id="drown7-msg" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown7-msg',
+  view: 'feed',
+  title: '首页',
+  time: '12:26',
+  battery: '61%',
+  unread: true,
+  activeTab: 'messages',
+  user: { name: '你', avatar: '你', handle: '@live_notes', meta: 'Skyline Horizon 现场记录' },
+  posts: [
+    { author: '你', avatar: '你', text: '@夏以昼', repostOf: { author: 'Skyline_Horizon_Official', text: '🎁 转发抽奖 | 下一场演出《后台一日游》🎁' }, reposts: 0, comments: 0, likes: 2 }
+  ],
+  messageAction: {
+    id: 'open-drown-caleb-dm',
+    title: 'Caleb',
+    preview: '你对夏以昼会永远都这么主动吗？',
+    badge: '1',
+    profile: { name: 'Caleb', avatar: 'C' },
+    setVars: { drownCalebJealousRead: true },
+    goto: 'Drown-7'
+  }
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;div id="drown7-chat" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderPhoneChat({
+  id: 'drown7-chat',
+  messages: [
+    { who: 'left', text: '你对夏以昼会永远都这么主动吗？' },
+    { who: 'right', text: '？不然呢' }
+  ],
+  nextText: '继续',
+  nextTarget: 'Drown-8'
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="Drown-8" tags="" position="2025,4600" size="100,100">手机屏幕的微光映在夏以昼的脸上，沙发的高度显然没法放下他的腿，只好随意地搭在茶几上。房间里没有明显的分割，沙发的一侧是鼓，另一侧是超大的双人床。灰和黑是房间的主调，唯一的光线来自窗边似乎是不小心拉开了一点的窗帘，和洒满了聚光灯光的舞台相比，这里完全是两个不同的世界。
+
+玄关的墙上挂着两顶机车头盔——一顶黑色，带着细密的划痕，另一顶是全新的粉色，漆面还闪着光。门口的角落里随意摆着个栏杆，挂着造型各异的包和演出服。
+
+&lt;div class="drown-scene-card drown-room-fallback" role="img" aria-label="灰黑色房间里有沙发、鼓、头盔和演出服架"&gt;&lt;/div&gt;
+
+夏以昼的手指拂过女孩的头像，指尖微微颤抖，盯着看了很久，最终还是没有点下关注。他复制下女孩的id，保存在自己的备忘录里。
+
+[[继续-&gt;Drown-9]]</tw-passagedata><tw-passagedata pid="33" name="Drown-9" tags="" position="2175,4600" size="100,100">&lt;div id="drown9-chat" class="phone-shell yizhou-phone" data-contact="乐队群聊"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderPhoneChat({
+  id: 'drown9-chat',
+  contact: '乐队群聊',
+  messages: [
+    { who: 'left', text: '@夏以昼 昼哥终于舍得开个账号了。我们还以为你这辈子都不会开社交媒体了。' },
+    { who: 'right', text: '。' },
+    { who: 'left', text: '昼哥记得随便发点什么。后天就抽奖了，到时候粉丝找不到账号就不好了。' },
+    { who: 'right', text: '知道了。待会会发。' }
+  ],
+  nextText: '继续',
+  nextTarget: 'Drown-10'
+})&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Drown-10" tags="" position="2325,4600" size="100,100">&lt;&lt;run ensureDrownChapterState()&gt;&gt;
+&lt;&lt;set $drownYizhouPostSeen = true&gt;&gt;
+他抬起眼睛，在房间里细细地扫了一圈，目光落在自己脚边的小飞机发夹。他把发夹小心翼翼地拿起来，放在一个精致的盒子里收好。打开手机相机，举起手朝着鼓的方向比了个v。
+
+相片很快就传上了新账号。下一秒，手机传来“叮”一声。有人点赞，随即评论的消息也涌了进来。
+
+&lt;div id="drown10-sns" class="sns-phone phone-shell yizhou-phone"&gt;&lt;/div&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
+  id: 'drown10-sns',
+  view: 'feed',
+  title: '夏以昼',
+  time: '12:39',
+  battery: '58%',
+  activeTab: 'profile',
+  topNotice: '新的赞和评论',
+  user: { name: '夏以昼', avatar: '', handle: '@xia_yizhou', meta: 'Skyline Horizon' },
+  posts: [
+    {
+      author: '夏以昼',
+      avatar: '',
+      handle: '@xia_yizhou',
+      time: '刚刚',
+      source: 'iPhone',
+      text: '',
+      image: { title: '新动态照片', src: 'assets/drown-yizhou-room-bg.jpg', fallbackClass: 'drown-room-fallback' },
+      reposts: 0,
+      comments: 1,
+      likes: 39
+    }
+  ],
+  items: [
+    { title: '你', preview: 'xyz终于有账号了，等一个私联（划掉）', profile: { name: '你', avatar: '你' }, unread: true }
+  ]
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+
+是她。
+
+“xyz终于有账号了，等一个私联（划掉）”
+
+他低头，指尖再次拂过手机上那个女孩的头像，动作轻得像在触碰什么易碎的东西。唇角一点点上扬，弯出一个让人分不清是温柔还是危险的弧度。
+
+第四章 Drown 线待续。</tw-passagedata><tw-passagedata pid="35" name="Caleb-2" tags="" position="825,2975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
 你开始一场又一场地去追，走进不同的酒吧或者地下舞台，仿佛与世界完全隔绝。你学会了……
 
-&lt;&lt;if $liveHabit is &quot;frontrow&quot;&gt;&gt;
+&lt;&lt;if $liveHabit is "frontrow"&gt;&gt;
 你开始习惯提前很久到场，在人群还没完全涌进来前占住最靠近舞台的位置。离得近了，夏以昼抬手、落下、转动鼓棒时手腕绷起的线条都清晰得过分。你甚至能看见他额角细小的汗意，在灯光扫过时一闪而过。
 
 [[继续-&gt;Caleb-3]]
-&lt;&lt;elseif $liveHabit is &quot;side&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "side"&gt;&gt;
 你慢慢找到了一个属于自己的位置——舞台侧边，离鼓架不算最近，却刚好能看清他上场前的样子。夏以昼有时会在开场前低头调试耳返，或漫不经心地转着鼓棒，视线从观众席扫过。你总觉得，他偶尔会停在你身上半秒。
 
 [[继续-&gt;Caleb-3]]
-&lt;&lt;elseif $liveHabit is &quot;replay&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "replay"&gt;&gt;
 演出还没开始，你就已经把乐团小号和练习视频翻了很多遍。你开始分辨出夏以昼常用的节奏、惯常的小动作，甚至能在现场听到某段鼓点时，比别人更早意识到那是他临时换过的处理。
 
 [[继续-&gt;Caleb-3]]
@@ -2077,36 +2570,36 @@ renderPhoneChat({
 [[提前到场，挤到最靠近舞台的位置。-&gt;Caleb-2-frontrow]]
 [[站在熟悉的侧边位置，安静地等他上台。-&gt;Caleb-2-side]]
 [[演出前反复刷乐团小号和夏以昼的练习视频。-&gt;Caleb-2-replay]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Caleb-2-frontrow" tags="" position="575,3100" size="100,100">&lt;&lt;set $liveHabit = &quot;frontrow&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Caleb-2-frontrow" tags="" position="575,3100" size="100,100">&lt;&lt;set $liveHabit = "frontrow"&gt;&gt;
 你开始习惯提前很久到场，在人群还没完全涌进来前占住最靠近舞台的位置。离得近了，夏以昼抬手、落下、转动鼓棒时手腕绷起的线条都清晰得过分。你甚至能看见他额角细小的汗意，在灯光扫过时一闪而过。
 
-[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="27" name="Caleb-2-replay" tags="" position="875,3100" size="100,100">&lt;&lt;set $liveHabit = &quot;replay&quot;&gt;&gt;
+[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="37" name="Caleb-2-replay" tags="" position="875,3100" size="100,100">&lt;&lt;set $liveHabit = "replay"&gt;&gt;
 演出还没开始，你就已经把乐团小号和练习视频翻了很多遍。你开始分辨出夏以昼常用的节奏、惯常的小动作，甚至能在现场听到某段鼓点时，比别人更早意识到那是他临时换过的处理。
 
-[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="28" name="Caleb-2-side" tags="" position="725,3100" size="100,100">&lt;&lt;set $liveHabit = &quot;side&quot;&gt;&gt;
+[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="38" name="Caleb-2-side" tags="" position="725,3100" size="100,100">&lt;&lt;set $liveHabit = "side"&gt;&gt;
 你慢慢找到了一个属于自己的位置——舞台侧边，离鼓架不算最近，却刚好能看清他上场前的样子。夏以昼有时会在开场前低头调试耳返，或漫不经心地转着鼓棒，视线从观众席扫过。你总觉得，他偶尔会停在你身上半秒。
 
-[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="29" name="Caleb-3" tags="" position="725,3225" size="100,100">在表演中，你的所有注意力都给了夏以昼，你站在台下仰望着拿着鼓棒手腕翻飞的他，对视的时候你可以确定他会对着你微微一笑。有的时候开场前还会用手指转着鼓棒看向你。
+[[继续-&gt;Caleb-3]]</tw-passagedata><tw-passagedata pid="39" name="Caleb-3" tags="" position="725,3225" size="100,100">在表演中，你的所有注意力都给了夏以昼，你站在台下仰望着拿着鼓棒手腕翻飞的他，对视的时候你可以确定他会对着你微微一笑。有的时候开场前还会用手指转着鼓棒看向你。
 
-&lt;&lt;if $liveHabit is &quot;frontrow&quot;&gt;&gt;
+&lt;&lt;if $liveHabit is "frontrow"&gt;&gt;
 你离得足够近，能看清他手腕绷起的弧度，鼓棒划过灯光时短暂的残影，还有额角汗意一闪而过的亮。
-&lt;&lt;elseif $liveHabit is &quot;side&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "side"&gt;&gt;
 你也渐渐习惯从侧边看他上场前调试耳返，或在灯光还未完全亮起时漫不经心地转着鼓棒，视线从观众席扫过。
-&lt;&lt;elseif $liveHabit is &quot;replay&quot;&gt;&gt;
+&lt;&lt;elseif $liveHabit is "replay"&gt;&gt;
 你听得出他第三首歌里某段鼓点和练习视频里的处理不太一样，那点细微的变化让你比周围的人更早兴奋起来。
 &lt;&lt;/if&gt;&gt;
 
 看演出的次数多了，你也大着胆子会在结束后趴在舞台边边看他收拾鼓棒和自己的东西，但并不会跟他张口搭话。最开始他看到你会愣住，后面也渐渐习惯了你的散场陪伴，走的时候会对你挥挥手，偶尔说一声“回家路上小心”。
 
-[[继续-&gt;Caleb-4]]</tw-passagedata><tw-passagedata pid="30" name="Caleb-4" tags="" position="725,3350" size="100,100">你有的时候会有在那双眼睛里被溺死的错觉。
+[[继续-&gt;Caleb-4]]</tw-passagedata><tw-passagedata pid="40" name="Caleb-4" tags="" position="725,3350" size="100,100">你有的时候会有在那双眼睛里被溺死的错觉。
 
 只是再也没有机会嗅到过那丝淡淡的皮革香水味。
 
 你发现自己越来越习惯这样的距离——近到能看清他每一次抬手落下的细节，却依旧远到没有任何私下的交集。舞台是他，观众是你，界限分明，却又让你甘愿沉溺在这片模糊的边界里。
 
-[[继续-&gt;Caleb-6A]]</tw-passagedata><tw-passagedata pid="31" name="Caleb-6A" tags="" position="725,3500" size="100,100">日子一天天过去，除了琐碎的生活，你被Caleb和夏以昼同时往前牵着。乐团的演出倒是很固定，而Caleb更像是在无孔不入地渗入你的生活。有时是演出后，他会问你有没有注意到夏以昼在某首歌里换了节奏；有时是深夜，他会突然分享一段鼓点的音频，问你觉得像不像夏以昼的风格。你回复得快了，他还会拿出年长者的架子哄你早点睡觉，不要熬夜。
+[[继续-&gt;Caleb-6A]]</tw-passagedata><tw-passagedata pid="41" name="Caleb-6A" tags="" position="725,3500" size="100,100">日子一天天过去，除了琐碎的生活，你被Caleb和夏以昼同时往前牵着。乐团的演出倒是很固定，而Caleb更像是在无孔不入地渗入你的生活。有时是演出后，他会问你有没有注意到夏以昼在某首歌里换了节奏；有时是深夜，他会突然分享一段鼓点的音频，问你觉得像不像夏以昼的风格。你回复得快了，他还会拿出年长者的架子哄你早点睡觉，不要熬夜。
 
-[[继续-&gt;Caleb-6B]]</tw-passagedata><tw-passagedata pid="32" name="Caleb-6B" tags="" position="750,3675" size="100,100">除了Caleb，你也有了一些其他的同好。大家倒也没有正式地见过面，更多的是在网上交流，分享演出细节或乐团小号的动态。偶尔在舞台下见到彼此也只是会客套地寒暄，不过认识了再多人，你最聊得来的还是只有Caleb。他和你一样场场不落，每次演出后都会跟你热烈讨论当晚的鼓点、灯光，甚至夏以昼某个不经意的动作。他总是说，你跟他的音乐喜好真的很契合，而且不止一次感叹真的很喜欢跟你聊天。
+[[继续-&gt;Caleb-6B]]</tw-passagedata><tw-passagedata pid="42" name="Caleb-6B" tags="" position="750,3675" size="100,100">除了Caleb，你也有了一些其他的同好。大家倒也没有正式地见过面，更多的是在网上交流，分享演出细节或乐团小号的动态。偶尔在舞台下见到彼此也只是会客套地寒暄，不过认识了再多人，你最聊得来的还是只有Caleb。他和你一样场场不落，每次演出后都会跟你热烈讨论当晚的鼓点、灯光，甚至夏以昼某个不经意的动作。他总是说，你跟他的音乐喜好真的很契合，而且不止一次感叹真的很喜欢跟你聊天。
 
 可奇怪的是，你一次都没在现场见过他，尽管他说自己每次都在场，演出绝对一场不落。
 
@@ -2114,13 +2607,13 @@ renderPhoneChat({
 
 你会想象吗？当然会。
 
-[[继续-&gt;Caleb-7]]</tw-passagedata><tw-passagedata pid="33" name="Caleb-7" tags="" position="725,3850" size="100,100">有时候，你觉得Caleb对你的注意似乎超过了舞台上的表演。
+[[继续-&gt;Caleb-7]]</tw-passagedata><tw-passagedata pid="43" name="Caleb-7" tags="" position="725,3850" size="100,100">有时候，你觉得Caleb对你的注意似乎超过了舞台上的表演。
 
 他会记得你在某场演出里佩戴的小飞机发夹，会记得你左手那串小苹果手链。这让你有些惊讶——在灯光闪烁、人潮拥挤的场子里，他怎么能记住这种细节。
 
-[[继续-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="34" name="Caleb-8" tags="" position="725,3975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
+[[继续-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="44" name="Caleb-8" tags="" position="725,3975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
 &lt;&lt;if $calebAskedToMeet&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
@@ -2141,9 +2634,9 @@ renderPhoneChat({
   ])
 })&gt;&gt;&lt;&lt;/done&gt;&gt;
 
-&lt;div class=&quot;phone-complete phone-complete-outside&quot;&gt;[[继续-&gt;Caleb-9]]&lt;/div&gt;
+&lt;div class="phone-complete phone-complete-outside"&gt;[[继续-&gt;Caleb-9]]&lt;/div&gt;
 &lt;&lt;elseif $calebHairclipViewed and $calebFirstReplySent is false&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
@@ -2164,7 +2657,7 @@ renderPhoneChat({
 
 你伸手拿过发夹，在手中轻轻摩挲着飞机的机翼，脸上露出了你自己也没意识到的笑容。
 &lt;&lt;elseif $calebHairclipViewed&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
@@ -2202,7 +2695,7 @@ renderPhoneChat({
   ]
 })&gt;&gt;&lt;&lt;/done&gt;&gt;
 &lt;&lt;elseif $calebHairclipRebought&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
@@ -2226,7 +2719,7 @@ renderPhoneChat({
 而那个发夹今天你刚刚收到。
 
 &lt;&lt;elseif $calebSnsPosted&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'feed',
@@ -2250,7 +2743,7 @@ renderPhoneChat({
   }
 })&gt;&gt;&lt;&lt;/done&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;div id="caleb8-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'compose',
@@ -2267,8 +2760,8 @@ renderPhoneChat({
     goto: 'Caleb-8'
   }
 })&gt;&gt;&lt;&lt;/done&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Caleb-8-Final" tags="" position="1025,3975" size="100,100">&lt;div id=&quot;caleb8-final-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;div id=&quot;caleb8-continue&quot; class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="Caleb-8-Final" tags="" position="1025,3975" size="100,100">&lt;div id="caleb8-final-sns" class="sns-phone phone-shell"&gt;&lt;/div&gt;
+&lt;div id="caleb8-continue" class="phone-complete phone-complete-outside"&gt;&lt;/div&gt;
 
 &lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-final-sns',
@@ -2286,180 +2779,180 @@ renderPhoneChat({
     { who: 'right', text: '我下次就带，到时候记得来找我打招呼。' }
   ])
 })&gt;&gt;&lt;&lt;/done&gt;&gt;
-&lt;&lt;done&gt;&gt;&lt;&lt;run document.querySelector('#caleb8-final-sns .sns-thread').insertAdjacentHTML('beforeend', '&lt;div id=&quot;caleb8-typing&quot; class=&quot;phone-typing show&quot;&gt;Caleb 正在输入中&lt;/div&gt;&lt;div id=&quot;caleb8-final-reply&quot;&gt;&lt;/div&gt;')&gt;&gt;&lt;&lt;/done&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run document.querySelector('#caleb8-final-sns .sns-thread').insertAdjacentHTML('beforeend', '&lt;div id="caleb8-typing" class="phone-typing show"&gt;Caleb 正在输入中&lt;/div&gt;&lt;div id="caleb8-final-reply"&gt;&lt;/div&gt;')&gt;&gt;&lt;&lt;/done&gt;&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
-  &lt;&lt;replace &quot;#caleb8-typing&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
-  &lt;&lt;replace &quot;#caleb8-final-reply&quot;&gt;&gt;
-    &lt;&lt;if $calebInviteTone is &quot;teasing&quot;&gt;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;哪有躲着你。只是我们不一定站得很近吧，如果有机会肯定会跟你打招呼的。&lt;/div&gt;
+  &lt;&lt;replace "#caleb8-typing"&gt;&gt;&lt;&lt;/replace&gt;&gt;
+  &lt;&lt;replace "#caleb8-final-reply"&gt;&gt;
+    &lt;&lt;if $calebInviteTone is "teasing"&gt;&gt;
+    &lt;div class="msg left"&gt;哪有躲着你。只是我们不一定站得很近吧，如果有机会肯定会跟你打招呼的。&lt;/div&gt;
     &lt;&lt;else&gt;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;我们不一定站得很近吧……如果有机会肯定会跟你打招呼的。&lt;/div&gt;
+    &lt;div class="msg left"&gt;我们不一定站得很近吧……如果有机会肯定会跟你打招呼的。&lt;/div&gt;
     &lt;&lt;/if&gt;&gt;
   &lt;&lt;/replace&gt;&gt;
-  &lt;&lt;replace &quot;#caleb8-continue&quot;&gt;&gt;[[继续-&gt;Caleb-9]]&lt;&lt;/replace&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="Caleb-8-Hairclip" tags="" position="875,3975" size="100,100">&lt;&lt;set $calebHairclipViewed = true&gt;&gt;
-&lt;div class=&quot;image-lightbox-inline&quot;&gt;
-  &lt;div class=&quot;hairclip-card large&quot;&gt;小飞机发夹&lt;br&gt;&lt;span&gt;图片占位&lt;/span&gt;&lt;/div&gt;
+  &lt;&lt;replace "#caleb8-continue"&gt;&gt;[[继续-&gt;Caleb-9]]&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="Caleb-8-Hairclip" tags="" position="875,3975" size="100,100">&lt;&lt;set $calebHairclipViewed = true&gt;&gt;
+&lt;div class="image-lightbox-inline"&gt;
+  &lt;div class="hairclip-card large"&gt;小飞机发夹&lt;br&gt;&lt;span&gt;图片占位&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-[[关闭图片-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="37" name="Caleb-9" tags="" position="725,4100" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
-&lt;div id=&quot;chat-caleb9&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
+[[关闭图片-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="47" name="Caleb-9" tags="" position="725,4100" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
+&lt;div id="chat-caleb9" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
 &lt;script&gt;
 renderCalebMeetChat({
-  id: &#39;chat-caleb9&#39;,
-  nextTarget: &#39;Caleb-10&#39;
+  id: 'chat-caleb9',
+  nextTarget: 'Caleb-10'
 });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="38" name="Chat_Caleb1" tags="" position="300,1200" size="100,100">&lt;div id=&quot;chat-caleb1&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="48" name="Chat_Caleb1" tags="" position="300,1200" size="100,100">&lt;div id="chat-caleb1" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb1&quot;,
+  id: "chat-caleb1",
   messages: [
-    { who: &quot;left&quot;,  text: &quot;你也喜欢夏以昼吗？&quot; },
-    { who: &quot;right&quot;, text: &quot;是的！&quot; },
-    { who: &quot;right&quot;, text: &quot;我今天第一次去 sh 的 live！被朋友拉过去的&quot; },
-    { who: &quot;right&quot;, text: &quot;在现场就完全被鼓手吸引了🥺 太帅了……怎么有人这么帅啊&quot; },
-    { who: &quot;left&quot;,  text: &quot;我也很喜欢他的表演和音乐理念&quot; },
-    { who: &quot;left&quot;,  text: &quot;难得能碰到他的粉丝，方便加个联系方式吗？&quot; },
-    { who: &quot;right&quot;, text: &quot;这是我的二维码&quot; },
-    { who: &quot;right&quot;, text: &quot;【二维码图片】&quot; },
-    { who: &quot;left&quot;,  text: &quot;算是吧，他组乐队之前就对他有点了解了。&quot; },
-    { who: &quot;left&quot;,  text: &quot;我加你了&quot; }
+    { who: "left",  text: "你也喜欢夏以昼吗？" },
+    { who: "right", text: "是的！" },
+    { who: "right", text: "我今天第一次去 sh 的 live！被朋友拉过去的" },
+    { who: "right", text: "在现场就完全被鼓手吸引了🥺 太帅了……怎么有人这么帅啊" },
+    { who: "left",  text: "我也很喜欢他的表演和音乐理念" },
+    { who: "left",  text: "难得能碰到他的粉丝，方便加个联系方式吗？" },
+    { who: "right", text: "这是我的二维码" },
+    { who: "right", text: "【二维码图片】" },
+    { who: "left",  text: "算是吧，他组乐队之前就对他有点了解了。" },
+    { who: "left",  text: "我加你了" }
   ],
-  completeText: &quot;第一章-Ambitious 结束&quot;,
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Blur&quot;
+  completeText: "第一章-Ambitious 结束",
+  nextText: "继续",
+  nextTarget: "Blur"
 });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="39" name="Chat_Caleb2" tags="" position="287.5,1450" size="100,100">&lt;div id=&quot;chat-caleb2&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="49" name="Chat_Caleb2" tags="" position="287.5,1450" size="100,100">&lt;div id="chat-caleb2" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb2&quot;,
+  id: "chat-caleb2",
   messages: [
-    { who: &quot;right&quot;, text: &quot;你知道他用的香水是哪一款吗？&quot; }
+    { who: "right", text: "你知道他用的香水是哪一款吗？" }
   ],
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Blur_A1&quot;
+  nextText: "继续",
+  nextTarget: "Blur_A1"
 });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="40" name="Chat_Caleb3" tags="" position="275,1700" size="100,100">&lt;div id=&quot;chat-caleb3&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="50" name="Chat_Caleb3" tags="" position="275,1700" size="100,100">&lt;div id="chat-caleb3" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb3&quot;,
+  id: "chat-caleb3",
   messages: [
-    { who: &quot;right&quot;, text: &quot;你知道他用的香水是哪一款吗？&quot; },
-    { who: &quot;left&quot;,  text: &quot;【图片】&quot;, image: &quot;assets/perfume.jpg&quot;, fallbackImage: &quot;file:///E:/codex/openclaw/assets/perfume.jpg&quot; },
-    { who: &quot;left&quot;,  text: &quot;好像是这个&quot; },
-    { who: &quot;right&quot;, text: &quot;谢谢，有机会我去看看&quot; },
-    { who: &quot;right&quot;, text: &quot;我该怎么称呼你&quot; },
-    { who: &quot;left&quot;,  text: &quot;Caleb&quot; }
+    { who: "right", text: "你知道他用的香水是哪一款吗？" },
+    { who: "left",  text: "【图片】", image: "assets/perfume.jpg", fallbackImage: "file:///E:/codex/openclaw/assets/perfume.jpg" },
+    { who: "left",  text: "好像是这个" },
+    { who: "right", text: "谢谢，有机会我去看看" },
+    { who: "right", text: "我该怎么称呼你" },
+    { who: "left",  text: "Caleb" }
   ],
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Blur-A1&quot;
+  nextText: "继续",
+  nextTarget: "Blur-A1"
 });
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="41" name="Chat_Caleb4" tags="" position="575,2600" size="100,100">&lt;div id=&quot;chat-caleb4&quot; class=&quot;phone-shell&quot; data-contact=&quot;Caleb&quot;&gt;&lt;/div&gt;
-&lt;&lt;if $path is &quot;casual&quot;&gt;&gt;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="51" name="Chat_Caleb4" tags="" position="575,2600" size="100,100">&lt;div id="chat-caleb4" class="phone-shell" data-contact="Caleb"&gt;&lt;/div&gt;
+&lt;&lt;if $path is "casual"&gt;&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb4&quot;,
+  id: "chat-caleb4",
   messages: [
-    { who: &quot;right&quot;, text: &quot;夏以昼今晚的鼓solo太炸了！感觉他好像看了我一眼，不过可能是我想多了，哈哈。&quot; },
-    { who: &quot;right&quot;, text: &quot;而且他转鼓棒的样子真的好帅啊啊啊啊啊怎么有人手指那么长那么好看！还是前排好，能看到这么多细节。&quot; },
-    { who: &quot;right&quot;, text: &quot;下次我还要抢前排！&quot; },
-    { who: &quot;left&quot;,  text: &quot;哈哈，他肯定看了你。站在第二排，那离得很近了。&quot; },
-    { who: &quot;right&quot;, text: &quot;你也在现场？&quot; },
-    { who: &quot;left&quot;,  text: &quot;嗯，我每场都会去。没想到真的是你。&quot; }
+    { who: "right", text: "夏以昼今晚的鼓solo太炸了！感觉他好像看了我一眼，不过可能是我想多了，哈哈。" },
+    { who: "right", text: "而且他转鼓棒的样子真的好帅啊啊啊啊啊怎么有人手指那么长那么好看！还是前排好，能看到这么多细节。" },
+    { who: "right", text: "下次我还要抢前排！" },
+    { who: "left",  text: "哈哈，他肯定看了你。站在第二排，那离得很近了。" },
+    { who: "right", text: "你也在现场？" },
+    { who: "left",  text: "嗯，我每场都会去。没想到真的是你。" }
   ],
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Blur-E2&quot;
+  nextText: "继续",
+  nextTarget: "Blur-E2"
 });
 &lt;/script&gt;
 &lt;&lt;else&gt;&gt;
 &lt;script&gt;
 renderPhoneChat({
-  id: &quot;chat-caleb4&quot;,
+  id: "chat-caleb4",
   messages: [
-    { who: &quot;right&quot;, text: &quot;夏以昼今晚的鼓solo太炸了！感觉他好像看了我一眼，不过可能是我想多了，哈哈。&quot; },
-    { who: &quot;right&quot;, text: &quot;而且他转鼓棒的样子真的好帅啊啊啊啊啊怎么有人手指那么长那么好看！还是前排好，能看到这么多细节。&quot; },
-    { who: &quot;right&quot;, text: &quot;下次我还要抢前排！&quot; },
-    { who: &quot;left&quot;,  text: &quot;哈哈，他肯定看了你。站在第二排，那离得很近了。&quot; },
-    { who: &quot;left&quot;, text: &quot;我今天好像看到你了，连衣裙很好看。&quot; },
-    { who: &quot;right&quot;, text: &quot;你也在现场？&quot; },
-    { who: &quot;left&quot;,  text: &quot;嗯，我每场都会去。没想到真的是你。&quot; }
+    { who: "right", text: "夏以昼今晚的鼓solo太炸了！感觉他好像看了我一眼，不过可能是我想多了，哈哈。" },
+    { who: "right", text: "而且他转鼓棒的样子真的好帅啊啊啊啊啊怎么有人手指那么长那么好看！还是前排好，能看到这么多细节。" },
+    { who: "right", text: "下次我还要抢前排！" },
+    { who: "left",  text: "哈哈，他肯定看了你。站在第二排，那离得很近了。" },
+    { who: "left", text: "我今天好像看到你了，连衣裙很好看。" },
+    { who: "right", text: "你也在现场？" },
+    { who: "left",  text: "嗯，我每场都会去。没想到真的是你。" }
   ],
-  nextText: &quot;继续&quot;,
-  nextTarget: &quot;Blur-E2&quot;
+  nextText: "继续",
+  nextTarget: "Blur-E2"
 });
 &lt;/script&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="StoryCaption" tags="" position="150,650" size="100,100">这是一个关于夏以昼的故事。
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="StoryCaption" tags="" position="150,650" size="100,100">这是一个关于夏以昼的故事。
 本游戏完全免费，禁二传二改。
 作者 Eri
 Q群：893010016
 &lt;!-- 左侧常驻按钮 --&gt;
-&lt;div id=&quot;stats-btn&quot; onclick=&quot;openStats()&quot; title=&quot;查看好感/阴暗度&quot;&gt;状态&lt;/div&gt;
-&lt;div id=&quot;memo-btn&quot; onclick=&quot;openMemo()&quot; title=&quot;剧情记忆&quot;&gt;记忆&lt;/div&gt;
+&lt;div id="stats-btn" onclick="openStats()" title="查看好感/阴暗度"&gt;状态&lt;/div&gt;
+&lt;div id="memo-btn" onclick="openMemo()" title="剧情记忆"&gt;记忆&lt;/div&gt;
 
 &lt;!-- 弹窗 --&gt;
-&lt;div id=&quot;stats-modal&quot; class=&quot;stats-modal&quot;&gt;
-  &lt;div class=&quot;stats-backdrop&quot; onclick=&quot;closeStats()&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;stats-card&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-label=&quot;状态面板&quot;&gt;
-    &lt;div class=&quot;stats-head&quot;&gt;
+&lt;div id="stats-modal" class="stats-modal"&gt;
+  &lt;div class="stats-backdrop" onclick="closeStats()"&gt;&lt;/div&gt;
+  &lt;div class="stats-card" role="dialog" aria-modal="true" aria-label="状态面板"&gt;
+    &lt;div class="stats-head"&gt;
       &lt;span&gt;状态面板&lt;/span&gt;
-      &lt;button class=&quot;stats-close&quot; onclick=&quot;closeStats()&quot; aria-label=&quot;关闭&quot;&gt;×&lt;/button&gt;
+      &lt;button class="stats-close" onclick="closeStats()" aria-label="关闭"&gt;×&lt;/button&gt;
     &lt;/div&gt;
-    &lt;div id=&quot;stats-body&quot; class=&quot;stats-body&quot;&gt;&lt;!-- 打开时注入 --&gt;&lt;/div&gt;
+    &lt;div id="stats-body" class="stats-body"&gt;&lt;!-- 打开时注入 --&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;!-- 记忆弹窗 --&gt;
-&lt;div id=&quot;memo-modal&quot; class=&quot;memo-modal&quot;&gt;
-  &lt;div class=&quot;stats-backdrop&quot; onclick=&quot;closeMemo()&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;memo-card&quot;&gt;
-    &lt;div class=&quot;stats-head&quot;&gt;
+&lt;div id="memo-modal" class="memo-modal"&gt;
+  &lt;div class="stats-backdrop" onclick="closeMemo()"&gt;&lt;/div&gt;
+  &lt;div class="memo-card"&gt;
+    &lt;div class="stats-head"&gt;
       &lt;span&gt;剧情记忆&lt;/span&gt;
-      &lt;button class=&quot;stats-close&quot; onclick=&quot;closeMemo()&quot; aria-label=&quot;关闭&quot;&gt;×&lt;/button&gt;
+      &lt;button class="stats-close" onclick="closeMemo()" aria-label="关闭"&gt;×&lt;/button&gt;
     &lt;/div&gt;
-    &lt;div id=&quot;memo-body&quot; class=&quot;memo-body&quot;&gt;&lt;!-- 动态渲染 --&gt;&lt;/div&gt;
+    &lt;div id="memo-body" class="memo-body"&gt;&lt;!-- 动态渲染 --&gt;&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Widgets-1" tags="widget" position="525,825" size="100,100">/* 弹窗里显示的内容：进度条 + 数值 */
-&lt;&lt;widget &quot;StatsContent&quot;&gt;&gt;
-&lt;div class=&quot;stats-section&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="Widgets-1" tags="widget" position="525,825" size="100,100">/* 弹窗里显示的内容：进度条 + 数值 */
+&lt;&lt;widget "StatsContent"&gt;&gt;
+&lt;div class="stats-section"&gt;
 
-  &lt;div class=&quot;stat-row&quot;&gt;
-    &lt;div class=&quot;stat-label&quot;&gt;夏以昼好感度&lt;/div&gt;
-    &lt;div class=&quot;stat-val&quot;&gt;&lt;&lt;= $favorYizhou &gt;&gt;%&lt;/div&gt;
-    &lt;div class=&quot;stat-meter&quot;&gt;
-      &lt;span style=&quot;width: &lt;&lt;= Math.min(100, Math.max(0, $favorYizhou)) &gt;&gt;%&quot;&gt;&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class=&quot;stat-row&quot;&gt;
-    &lt;div class=&quot;stat-label&quot;&gt;Caleb&lt;/div&gt;
-    &lt;div class=&quot;stat-val&quot;&gt;&lt;&lt;= $favorCaleb &gt;&gt;%&lt;/div&gt;
-    &lt;div class=&quot;stat-meter&quot;&gt;
-      &lt;span style=&quot;width: &lt;&lt;= Math.min(100, Math.max(0, $favorCaleb)) &gt;&gt;%&quot;&gt;&lt;/span&gt;
+  &lt;div class="stat-row"&gt;
+    &lt;div class="stat-label"&gt;夏以昼好感度&lt;/div&gt;
+    &lt;div class="stat-val"&gt;&lt;&lt;= $favorYizhou &gt;&gt;%&lt;/div&gt;
+    &lt;div class="stat-meter"&gt;
+      &lt;span style="width: &lt;&lt;= Math.min(100, Math.max(0, $favorYizhou)) &gt;&gt;%"&gt;&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;div class=&quot;stat-row&quot;&gt;
-    &lt;div class=&quot;stat-label&quot;&gt;
+  &lt;div class="stat-row"&gt;
+    &lt;div class="stat-label"&gt;Caleb&lt;/div&gt;
+    &lt;div class="stat-val"&gt;&lt;&lt;= $favorCaleb &gt;&gt;%&lt;/div&gt;
+    &lt;div class="stat-meter"&gt;
+      &lt;span style="width: &lt;&lt;= Math.min(100, Math.max(0, $favorCaleb)) &gt;&gt;%"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="stat-row"&gt;
+    &lt;div class="stat-label"&gt;
       &lt;&lt;if $darkness &lt;= 20&gt;&gt;？？？&lt;&lt;/if&gt;&gt;
       &lt;&lt;if $darkness &gt; 20 and $darkness &lt;= 50&gt;&gt;阴影&lt;&lt;/if&gt;&gt;
       &lt;&lt;if $darkness &gt; 50&gt;&gt;阴暗度&lt;&lt;/if&gt;&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;stat-val&quot;&gt;&lt;&lt;= $darkness &gt;&gt;%&lt;/div&gt;
-    &lt;div class=&quot;stat-meter dark&quot;&gt;
-      &lt;span style=&quot;width: &lt;&lt;= Math.min(100, Math.max(0, $darkness)) &gt;&gt;%&quot;&gt;&lt;/span&gt;
+    &lt;div class="stat-val"&gt;&lt;&lt;= $darkness &gt;&gt;%&lt;/div&gt;
+    &lt;div class="stat-meter dark"&gt;
+      &lt;span style="width: &lt;&lt;= Math.min(100, Math.max(0, $darkness)) &gt;&gt;%"&gt;&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
 &lt;/div&gt;
 &lt;&lt;/widget&gt;&gt;
 
-&lt;&lt;widget &quot;snsRoot&quot;&gt;&gt;
-&lt;div id=&quot;&lt;&lt;= _args[0] &gt;&gt;&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;&lt;widget "snsRoot"&gt;&gt;
+&lt;div id="&lt;&lt;= _args[0] &gt;&gt;" class="sns-phone phone-shell"&gt;&lt;/div&gt;
 &lt;&lt;/widget&gt;&gt;
 
-&lt;&lt;widget &quot;snsContinue&quot;&gt;&gt;
-&lt;div class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;&lt;link _args[0] _args[1]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="故事的开始" tags="" position="500,200" size="200,200">&lt;&lt;set $favorYizhou = 0&gt;&gt;
+&lt;&lt;widget "snsContinue"&gt;&gt;
+&lt;div class="phone-complete phone-complete-outside"&gt;&lt;&lt;link _args[0] _args[1]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="故事的开始" tags="" position="500,200" size="200,200">&lt;&lt;set $favorYizhou = 0&gt;&gt;
 &lt;&lt;set $favorCaleb = 0&gt;&gt;
 &lt;&lt;set $darkness = 0&gt;&gt;
 &lt;&lt;set $path = 0&gt;&gt; 
@@ -2467,7 +2960,7 @@ Q群：893010016
 受朋友邀请，你第一次走进那家地下Live酒吧。
 是一个名为Skyline Horizon的地下乐队的演出。
 
-[[进入第一场演出-&gt;Ambitious_A1]]</tw-passagedata><tw-passagedata pid="45" name="未命名片段" tags="" position="550,50" size="100,100">2025年9月制作
+[[进入第一场演出-&gt;Ambitious_A1]]</tw-passagedata><tw-passagedata pid="55" name="未命名片段" tags="" position="550,50" size="100,100">2025年9月制作
 CP：【夏以昼x你】
 夏以昼：地下乐团Skyline Horizon的鼓手，本职工作：？？？？
 你：普通社畜，最近受朋友邀请经常看各种乐团演出
