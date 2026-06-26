@@ -855,22 +855,31 @@ a.link-internal:hover {
     min-height: 0;
     font-size: 15px;
   }
+  .sns-phone.phone-shell,
   .sns-app.phone-shell {
     min-height: 560px;
     height: 74vh;
   }
-  .sns-profile,
-  .sns-compose,
-  .sns-feed {
+  .sns-scroll {
+    padding: 10px;
+  }
+  .sns-topbar {
+    grid-template-columns: 34px 1fr 34px;
     padding-left: 12px;
     padding-right: 12px;
   }
-  .sns-compose-box,
-  .sns-post,
-  .sns-inbox-card {
+  .sns-editor,
+  .sns-feed-card,
+  .sns-thread-card {
     box-sizing: border-box;
     width: 100%;
     padding: 12px;
+  }
+  .sns-thread-card {
+    grid-template-columns: 32px 1fr auto;
+  }
+  .sns-bottom-nav {
+    padding: 9px 6px 12px;
   }
   .hairclip-card {
     box-sizing: border-box;
@@ -895,171 +904,247 @@ a.link-internal:hover {
   }
 }
 
-/* === 第三章 Caleb 局部互动 === */
+/* === 通用微博风格 SNS 模块 === */
+.sns-phone.phone-shell,
 .caleb-sns.phone-shell {
-  min-height: 520px;
-  height: auto;
+  min-height: 560px;
+  background:
+    linear-gradient(180deg, rgba(12, 14, 24, .98), rgba(6, 8, 15, .98)),
+    radial-gradient(circle at 72% 0%, rgba(255, 129, 77, .16), transparent 34%);
 }
 
-.sns-app.phone-shell {
-  min-height: 600px;
-}
-
-.sns-profile {
-  display: flex;
-  gap: 12px;
+.sns-topbar {
+  min-height: 46px;
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
   align-items: center;
-  padding: 14px 18px;
+  padding: 0 14px;
   border-bottom: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  background: rgba(255,255,255,.035);
+  color: #fff;
+}
+
+.sns-topbar strong {
+  text-align: center;
+  font-size: 15px;
+}
+
+.sns-more {
+  text-align: right;
+  color: rgba(255,255,255,.55);
+  font-size: 13px;
+}
+
+.sns-top-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff7a45;
+  box-shadow: 0 0 16px rgba(255,122,69,.82);
+}
+
+.sns-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.sns-publish-page,
+.sns-message-list,
+.sns-feed {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.sns-profile-strip,
+.sns-post-head {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sns-profile-strip {
+  padding: 10px 4px 4px;
+}
+
+.sns-profile-strip.compact {
+  padding-bottom: 0;
 }
 
 .sns-avatar {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, #8f63ff, #e78b57);
+  background: linear-gradient(135deg, #ff8a50, #8f63ff);
   color: #fff;
   font-weight: 800;
   box-shadow: 0 10px 24px rgba(0,0,0,.24);
 }
 
 .sns-avatar.small {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   font-size: 12px;
 }
 
-.sns-profile-name {
+.sns-profile-name,
+.sns-name,
+.sns-thread-card strong {
   color: #fff;
   font-weight: 800;
 }
 
 .sns-profile-meta,
-.sns-time {
+.sns-time,
+.sns-thread-card em {
+  display: block;
   margin-top: 2px;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.55);
   font-size: 12px;
+  font-style: normal;
 }
 
-.sns-compose,
-.sns-feed {
-  padding: 18px;
-}
-
-.sns-compose {
-  display: grid;
-  gap: 12px;
-}
-
-.sns-compose-top,
-.sns-post-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.sns-compose-label,
-.sns-name {
-  color: rgba(255,255,255,.72);
-  font-size: 13px;
-  margin-bottom: 8px;
-}
-
-.sns-compose-box,
-.sns-post {
-  border: 1px solid rgba(255,255,255,.12);
+.sns-editor,
+.sns-feed-card,
+.sns-thread-card {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.11);
   border-radius: 18px;
-  background: rgba(255,255,255,.08);
-  padding: 14px;
+  background: rgba(255,255,255,.075);
   color: #fff;
-  line-height: 1.6;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025);
 }
 
-.sns-compose-box {
-  min-height: 108px;
+.sns-editor {
+  padding: 14px;
 }
 
-.sns-compose-tools {
+.sns-editor-text {
+  min-height: 116px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.sns-tool-row,
+.sns-actionbar {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   color: rgba(255,255,255,.52);
   font-size: 12px;
 }
 
-.sns-text {
-  margin-top: 12px;
-}
-
-.sns-actions {
-  display: flex;
-  justify-content: space-between;
+.sns-tool-row {
   margin-top: 14px;
   padding-top: 10px;
   border-top: 1px solid rgba(255,255,255,.08);
-  color: rgba(255,255,255,.52);
-  font-size: 12px;
 }
 
-.sns-inbox-card {
-  display: flex;
+.sns-feed-card {
+  padding: 13px;
+}
+
+.sns-author {
+  min-width: 0;
+}
+
+.sns-text {
+  margin-top: 10px;
+  color: rgba(255,255,255,.94);
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.sns-actionbar {
+  margin-top: 12px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.sns-thread-card {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 10px;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
-  padding: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 18px;
-  background: rgba(255,255,255,.08);
-  color: #fff;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
 }
 
-.sns-inbox-title {
-  font-weight: 800;
+.sns-thread-card.unread {
+  background: linear-gradient(135deg, rgba(255, 127, 82, .18), rgba(143, 99, 255, .12));
 }
 
-.sns-inbox-preview {
-  margin-top: 4px;
-  color: rgba(255,255,255,.62);
-  font-size: 13px;
+.sns-thread-card span {
+  min-width: 0;
 }
 
-.sns-badge {
-  min-width: 24px;
-  height: 24px;
+.sns-thread-card b {
+  min-width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: #ff8f57;
+  background: #ff7a45;
   color: #fff;
   font-size: 12px;
-  font-weight: 800;
 }
 
-.sns-dm-unread {
-  margin-top: 14px;
+.sns-action {
+  width: 100%;
   padding: 12px 14px;
+  border: 0;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(127, 93, 255, .76), rgba(221, 125, 74, .58));
+  background: linear-gradient(135deg, #ff824d, #8f63ff);
   color: #fff;
-  box-shadow: 0 12px 28px rgba(0,0,0,.24);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(0,0,0,.22);
 }
 
-.sns-tabbar {
+.sns-action.primary {
+  margin-top: 2px;
+}
+
+.sns-inline-note {
+  padding: 10px 14px 0;
+  color: rgba(255,255,255,.78);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.sns-thread {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 138, 80, .1), transparent 26%),
+    linear-gradient(180deg, rgba(12, 14, 24, .92), rgba(5, 7, 13, .98));
+}
+
+.sns-bottom-nav {
   margin-top: auto;
   display: flex;
   justify-content: space-around;
-  padding: 11px 10px 14px;
+  padding: 10px 8px 13px;
   border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.2);
   color: rgba(255,255,255,.48);
   font-size: 12px;
-  background: rgba(0,0,0,.18);
 }
 
-.sns-tabbar .active {
+.sns-bottom-nav .active {
   color: #fff;
   font-weight: 800;
+}
+
+.phone-dot.unread {
+  background: #ff9f5c;
+  box-shadow: 0 0 16px rgba(255,159,92,.9);
 }
 
 .phone-dot.unread {
@@ -1343,6 +1428,201 @@ window.renderPhoneChat = function(config){
   setTimeout(step, 520);
 };
 
+window.renderSnsApp = function(config){
+  const root = document.getElementById(config.id);
+  if (!root) return;
+
+  const user = Object.assign({
+    name: '你',
+    avatar: '你',
+    handle: '@live_notes',
+    meta: 'Skyline Horizon 现场记录'
+  }, config.user || {});
+  const view = config.view || 'feed';
+  const activeTab = config.activeTab || (view === 'messages' || view === 'thread' ? 'messages' : 'home');
+  const titleMap = {
+    compose: '发微博',
+    feed: '首页',
+    notifications: '消息',
+    messages: '消息',
+    thread: config.contact || '私信'
+  };
+
+  function avatarHTML(profile, small){
+    const p = Object.assign(user, profile || {});
+    return `<div class="sns-avatar${small ? ' small' : ''}">${escapeHTML(p.avatar || p.name || '你').slice(0, 2)}</div>`;
+  }
+
+  function actionButton(action, extraClass){
+    if (!action) return '';
+    const label = escapeHTML(action.label || '继续');
+    return `<button class="sns-action ${extraClass || ''}" type="button" data-sns-action="${escapeHTML(action.id || '')}">${label}</button>`;
+  }
+
+  function navHTML(){
+    const items = [
+      ['home', '首页'],
+      ['discover', '发现'],
+      ['messages', '消息'],
+      ['profile', '我的']
+    ];
+    return `<div class="sns-bottom-nav">${items.map(([id, label]) =>
+      `<span class="${activeTab === id ? 'active' : ''}">${escapeHTML(label)}</span>`
+    ).join('')}</div>`;
+  }
+
+  function topbarHTML(){
+    const title = config.title || titleMap[view] || '首页';
+    const unread = config.unread ? '<span class="sns-top-dot"></span>' : '';
+    return `
+      <div class="phone-status"><span>${escapeHTML(config.time || '00:12')}</span><span>5G  ${escapeHTML(config.battery || '72%')}</span></div>
+      <div class="sns-topbar">
+        <span class="phone-back">${config.back === false ? '' : '‹'}</span>
+        <strong>${escapeHTML(title)}</strong>
+        <span class="sns-more">${unread || '•••'}</span>
+      </div>`;
+  }
+
+  function postHTML(post){
+    const p = Object.assign({
+      author: user.name,
+      avatar: user.avatar,
+      handle: user.handle,
+      time: '刚刚',
+      source: '微博移动端',
+      reposts: 0,
+      comments: 0,
+      likes: 0
+    }, post || {});
+    return `
+      <article class="sns-feed-card">
+        <div class="sns-post-head">
+          ${avatarHTML({ name: p.author, avatar: p.avatar }, true)}
+          <div class="sns-author">
+            <div class="sns-name">${escapeHTML(p.author)}</div>
+            <div class="sns-time">${escapeHTML(p.time)} · 来自 ${escapeHTML(p.source)}</div>
+          </div>
+        </div>
+        <div class="sns-text">${escapeHTML(p.text || '')}</div>
+        <div class="sns-actionbar">
+          <span>转发 ${escapeHTML(p.reposts)}</span>
+          <span>评论 ${escapeHTML(p.comments)}</span>
+          <span>赞 ${escapeHTML(p.likes)}</span>
+        </div>
+      </article>`;
+  }
+
+  function composeHTML(){
+    return `
+      ${topbarHTML()}
+      <div class="sns-scroll sns-publish-page">
+        <div class="sns-profile-strip">
+          ${avatarHTML(user)}
+          <div>
+            <div class="sns-profile-name">${escapeHTML(user.name)}</div>
+            <div class="sns-profile-meta">${escapeHTML(user.meta)}</div>
+          </div>
+        </div>
+        <div class="sns-editor">
+          <div class="sns-editor-text">${escapeHTML(config.composeText || '')}</div>
+          <div class="sns-tool-row"><span>图片</span><span># 话题</span><span>位置</span><span>公开</span></div>
+        </div>
+        ${actionButton(config.primaryAction, 'primary')}
+      </div>
+      ${navHTML()}`;
+  }
+
+  function feedHTML(){
+    const posts = config.posts || [];
+    return `
+      ${topbarHTML()}
+      <div class="sns-scroll sns-feed">
+        <div class="sns-profile-strip compact">
+          ${avatarHTML(user)}
+          <div>
+            <div class="sns-profile-name">${escapeHTML(user.name)}</div>
+            <div class="sns-profile-meta">${escapeHTML(user.meta)}</div>
+          </div>
+        </div>
+        ${posts.map(postHTML).join('')}
+        ${config.messageAction ? `
+          <button class="sns-thread-card unread" type="button" data-sns-action="${escapeHTML(config.messageAction.id)}">
+            ${avatarHTML(config.messageAction.profile || { name: 'Caleb', avatar: 'C' }, true)}
+            <span><strong>${escapeHTML(config.messageAction.title || '私信')}</strong><em>${escapeHTML(config.messageAction.preview || '')}</em></span>
+            <b>${escapeHTML(config.messageAction.badge || '1')}</b>
+          </button>` : ''}
+      </div>
+      ${navHTML()}`;
+  }
+
+  function notificationsHTML(){
+    return `
+      ${topbarHTML()}
+      <div class="sns-scroll sns-message-list">
+        ${(config.items || []).map(item => `
+          <button class="sns-thread-card ${item.unread ? 'unread' : ''}" type="button" data-sns-action="${escapeHTML(item.action || '')}">
+            ${avatarHTML(item.profile || {}, true)}
+            <span><strong>${escapeHTML(item.title || '')}</strong><em>${escapeHTML(item.preview || '')}</em></span>
+            ${item.badge ? `<b>${escapeHTML(item.badge)}</b>` : ''}
+          </button>`).join('')}
+      </div>
+      ${navHTML()}`;
+  }
+
+  function threadHTML(){
+    const messages = config.messages || [];
+    return `
+      ${topbarHTML()}
+      <div class="phone-chat sns-thread">
+        ${messages.map(msg => {
+          if (msg.type === 'imagePlaceholder') {
+            return `<div class="hairclip-card">${escapeHTML(msg.title || '图片')}<br><span>${escapeHTML(msg.caption || '图片占位')}</span></div>`;
+          }
+          return `<div class="msg ${escapeHTML(msg.who || 'left')}">${escapeHTML(msg.text || '')}</div>`;
+        }).join('')}
+      </div>
+      ${config.bodyNote ? `<div class="sns-inline-note">${escapeHTML(config.bodyNote)}</div>` : ''}
+      ${config.secondaryAction ? `<div class="phone-action-row">${actionButton(config.secondaryAction)}</div>` : ''}
+      ${config.actions && config.actions.length ? `<div class="phone-action-row">${config.actions.map(action => actionButton(action)).join('')}</div>` : ''}`;
+  }
+
+  const renderers = {
+    compose: composeHTML,
+    feed: feedHTML,
+    notifications: notificationsHTML,
+    messages: notificationsHTML,
+    thread: threadHTML
+  };
+
+  root.classList.add('sns-phone', 'phone-shell');
+  root.innerHTML = (renderers[view] || feedHTML)();
+
+  const actions = {};
+  (config.actions || []).concat(config.primaryAction || [], config.secondaryAction || [], config.messageAction || [], config.items || [])
+    .filter(Boolean)
+    .forEach(action => {
+      const id = action.id || action.action;
+      if (id) actions[id] = action;
+    });
+
+  root.querySelectorAll('[data-sns-action]').forEach(button => {
+    button.addEventListener('click', function(){
+      const action = actions[button.getAttribute('data-sns-action')];
+      if (!action) return;
+      if (typeof action.onClick === 'function') {
+        action.onClick();
+        return;
+      }
+      if (action.setVars) {
+        Object.keys(action.setVars).forEach(key => {
+          State.variables[key] = action.setVars[key];
+        });
+      }
+      if (action.goto) Engine.play(action.goto);
+    });
+  });
+};
+
 /* === 第三章 Caleb 线工具 === */
 window.ensureCalebChapterState = function(){
   const vars = State.variables;
@@ -1598,14 +1878,60 @@ $(document).on(':passagedisplay', function () {
 评论发出去不到十秒，就有人点了个赞。你愣了愣，以为是其他路过的粉丝，没多想，继续往下翻着视频。
 
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
-- [[打开私信-&gt;Chat_Caleb1]]</tw-passagedata><tw-passagedata pid="7" name="Ambitious_Noconnect" tags="" position="500,950" size="100,100">Skyline Horizon的演出结束了，朋友也不知道去哪浪，根本找不见人影，你有些累了。收拾好包走出酒吧。微凉的夜风把在店里的燥热吹得一干二净，耳中依旧嗡嗡作响。你慢悠悠走在街上，回味着夏以昼的模样与气息。
+
+&lt;&lt;snsRoot &quot;ambitious-sns-home&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'ambitious-sns-home',
+  view: 'notifications',
+  title: '消息',
+  time: '23:18',
+  battery: '76%',
+  unread: true,
+  activeTab: 'messages',
+  items: [
+    {
+      action: 'open-caleb-first-dm',
+      title: 'Caleb',
+      preview: '你也喜欢夏以昼吗？',
+      badge: '1',
+      unread: true,
+      profile: { name: 'Caleb', avatar: 'C' },
+      goto: 'Chat_Caleb1'
+    }
+  ]
+});
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="7" name="Ambitious_Noconnect" tags="" position="500,950" size="100,100">Skyline Horizon的演出结束了，朋友也不知道去哪浪，根本找不见人影，你有些累了。收拾好包走出酒吧。微凉的夜风把在店里的燥热吹得一干二净，耳中依旧嗡嗡作响。你慢悠悠走在街上，回味着夏以昼的模样与气息。
 
 上了地铁，你专心地看着乐队账号的每一条评论，还顺藤摸瓜找到了他们跟粉丝互动用的公开小号，也顺手点了个关注。刷着刷着，你停在一条夏以昼练习的视频——宽松的黑T恤、手腕翻飞的节奏感，让你忍不住在评论区敲下：“不是我说，人怎么能帅成这样啊？”
 
 评论发出去不到十秒，就有人点了个赞。你愣了愣，以为是其他路过的粉丝，没多想，继续往下翻着视频。
 
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
-- [[打开私信-&gt;Chat_Caleb1]]</tw-passagedata><tw-passagedata pid="8" name="Blur" tags="" position="287.5,1325" size="100,100">&lt;&lt;set $darkness += 5&gt;&gt;
+
+&lt;&lt;snsRoot &quot;ambitious-sns-noconnect&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'ambitious-sns-noconnect',
+  view: 'notifications',
+  title: '消息',
+  time: '23:18',
+  battery: '76%',
+  unread: true,
+  activeTab: 'messages',
+  items: [
+    {
+      action: 'open-caleb-first-dm',
+      title: 'Caleb',
+      preview: '你也喜欢夏以昼吗？',
+      badge: '1',
+      unread: true,
+      profile: { name: 'Caleb', avatar: 'C' },
+      goto: 'Chat_Caleb1'
+    }
+  ]
+});
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="8" name="Blur" tags="" position="287.5,1325" size="100,100">&lt;&lt;set $darkness += 5&gt;&gt;
 
 进了家门，你脱掉高跟鞋，揉了揉自己有些酸痛的小腿和脚踝。今晚的热闹好像还在皮肤下滚动，耳朵里的嗡鸣已经消散殆尽，身上缭绕的复杂味道在房间中开始弥散，你又想起夏以昼身上那股淡淡的皮革味。是你在其他人身上没有闻到过的香水。你思考了一会，向新好友发了消息：
 
@@ -1798,160 +2124,189 @@ renderPhoneChat({
 
 [[继续-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="34" name="Caleb-8" tags="" position="725,3975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
 &lt;&lt;if $calebAskedToMeet&gt;&gt;
-&lt;div class=&quot;caleb-sns phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:18&lt;/span&gt;&lt;span&gt;5G  68%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;Caleb&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-chat&quot;&gt;
-    &lt;div class=&quot;msg right&quot;&gt;最近去演出太多次，都没有什么新衣服穿了。&lt;/div&gt;
-    &lt;div class=&quot;msg left&quot;&gt;之前的小飞机发夹很适合你。最近怎么没戴？&lt;/div&gt;
-    &lt;div class=&quot;msg right&quot;&gt;笑死，把你从我家装的监控拆了吧。&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'thread',
+  title: 'Caleb',
+  time: '00:18',
+  battery: '68%',
+  contact: 'Caleb',
+  messages: [
+    { who: 'right', text: '最近去演出太多次，都没有什么新衣服穿了。' },
+    { who: 'left', text: '之前的小飞机发夹很适合你。最近怎么没戴？' },
+    { who: 'right', text: '笑死，把你从我家装的监控拆了吧。' },
     &lt;&lt;if $calebInviteTone is &quot;teasing&quot;&gt;&gt;
-    &lt;div class=&quot;msg right&quot;&gt;下次别躲着了，看到我就来打招呼。&lt;/div&gt;
-    &lt;div class=&quot;msg left&quot;&gt;哪有躲着你。只是我们不一定站得很近吧，如果有机会肯定会跟你打招呼的。&lt;/div&gt;
+    { who: 'right', text: '下次别躲着了，看到我就来打招呼。' },
+    { who: 'left', text: '哪有躲着你。只是我们不一定站得很近吧，如果有机会肯定会跟你打招呼的。' }
     &lt;&lt;else&gt;&gt;
-    &lt;div class=&quot;msg right&quot;&gt;我下次就带，到时候记得来找我打招呼。&lt;/div&gt;
-    &lt;div class=&quot;msg left&quot;&gt;我们不一定站得很近吧……如果有机会肯定会跟你打招呼的。&lt;/div&gt;
+    { who: 'right', text: '我下次就带，到时候记得来找我打招呼。' },
+    { who: 'left', text: '我们不一定站得很近吧……如果有机会肯定会跟你打招呼的。' }
     &lt;&lt;/if&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+  ]
+});
+&lt;/script&gt;
 
 &lt;div class=&quot;phone-complete phone-complete-outside&quot;&gt;[[继续-&gt;Caleb-9]]&lt;/div&gt;
 &lt;&lt;elseif $calebHairclipViewed and $calebFirstReplySent is false&gt;&gt;
-&lt;div class=&quot;caleb-sns phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:15&lt;/span&gt;&lt;span&gt;5G  70%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;Caleb&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-chat&quot;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;之前的小飞机发夹很适合你。最近怎么没戴？&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;phone-action-row&quot;&gt;
-&lt;&lt;link &quot;笑死，把你从我家装的监控拆了吧。&quot;&gt;&gt;
-  &lt;&lt;set $calebFirstReplySent = true&gt;&gt;
-  &lt;&lt;goto &quot;Caleb-8&quot;&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'thread',
+  title: 'Caleb',
+  time: '00:15',
+  battery: '70%',
+  contact: 'Caleb',
+  messages: [
+    { who: 'left', text: '之前的小飞机发夹很适合你。最近怎么没戴？' }
+  ],
+  secondaryAction: {
+    id: 'first-reply',
+    label: '笑死，把你从我家装的监控拆了吧。',
+    setVars: { calebFirstReplySent: true },
+    goto: 'Caleb-8'
+  }
+});
+&lt;/script&gt;
 
 你伸手拿过发夹，在手中轻轻摩挲着飞机的机翼，脸上露出了你自己也没意识到的笑容。
 &lt;&lt;elseif $calebHairclipViewed&gt;&gt;
-&lt;div class=&quot;caleb-sns phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:16&lt;/span&gt;&lt;span&gt;5G  70%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;Caleb&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-chat&quot;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;之前的小飞机发夹很适合你。最近怎么没戴？&lt;/div&gt;
-    &lt;div class=&quot;msg right&quot;&gt;笑死，把你从我家装的监控拆了吧。&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;phone-action-row&quot;&gt;
-&lt;&lt;link &quot;我下次就带，到时候记得来找我打招呼。&quot;&gt;&gt;
-  &lt;&lt;set $calebInviteTone = &quot;direct&quot;&gt;&gt;
-  &lt;&lt;set $calebAskedToMeet = true&gt;&gt;
-  &lt;&lt;set $favorCaleb += 1&gt;&gt;
-  &lt;&lt;goto &quot;Caleb-8-Final&quot;&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-
-&lt;&lt;link &quot;下次别躲着了，看到我就来打招呼。&quot;&gt;&gt;
-  &lt;&lt;set $calebInviteTone = &quot;teasing&quot;&gt;&gt;
-  &lt;&lt;set $calebAskedToMeet = true&gt;&gt;
-  &lt;&lt;set $favorCaleb += 1&gt;&gt;
-  &lt;&lt;goto &quot;Caleb-8-Final&quot;&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'thread',
+  title: 'Caleb',
+  time: '00:16',
+  battery: '70%',
+  contact: 'Caleb',
+  messages: [
+    { who: 'left', text: '之前的小飞机发夹很适合你。最近怎么没戴？' },
+    { who: 'right', text: '笑死，把你从我家装的监控拆了吧。' }
+  ],
+  actions: [
+    {
+      id: 'invite-direct',
+      label: '我下次就带，到时候记得来找我打招呼。',
+      goto: 'Caleb-8-Final',
+      onClick: function(){
+        State.variables.calebInviteTone = 'direct';
+        State.variables.calebAskedToMeet = true;
+        State.variables.favorCaleb += 1;
+        Engine.play('Caleb-8-Final');
+      }
+    },
+    {
+      id: 'invite-teasing',
+      label: '下次别躲着了，看到我就来打招呼。',
+      goto: 'Caleb-8-Final',
+      onClick: function(){
+        State.variables.calebInviteTone = 'teasing';
+        State.variables.calebAskedToMeet = true;
+        State.variables.favorCaleb += 1;
+        Engine.play('Caleb-8-Final');
+      }
+    }
+  ]
+});
+&lt;/script&gt;
 &lt;&lt;elseif $calebHairclipRebought&gt;&gt;
-&lt;div class=&quot;caleb-sns phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:13&lt;/span&gt;&lt;span&gt;5G  70%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;Caleb&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-chat&quot;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;之前的小飞机发夹很适合你。最近怎么没戴？&lt;/div&gt;
-    &lt;div class=&quot;hairclip-card&quot;&gt;小飞机发夹&lt;br&gt;&lt;span&gt;图片占位&lt;/span&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;phone-action-row&quot;&gt;[[查看小飞机发夹-&gt;Caleb-8-Hairclip]]&lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'thread',
+  title: 'Caleb',
+  time: '00:13',
+  battery: '70%',
+  contact: 'Caleb',
+  messages: [
+    { who: 'left', text: '之前的小飞机发夹很适合你。最近怎么没戴？' },
+    { type: 'imagePlaceholder', title: '小飞机发夹', caption: '图片占位' }
+  ],
+  secondaryAction: {
+    id: 'view-hairclip',
+    label: '查看小飞机发夹',
+    goto: 'Caleb-8-Hairclip'
+  }
+});
+&lt;/script&gt;
 
 你愣了。那个发夹早在前段时间的一场演出后不慎遗失，一直没找到。可你实在喜欢，犹豫了许久，还是重新买了同款。
 
 而那个发夹今天你刚刚收到。
 
 &lt;&lt;elseif $calebSnsPosted&gt;&gt;
-&lt;div class=&quot;caleb-sns sns-app phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:12&lt;/span&gt;&lt;span&gt;5G  71%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;个人主页&lt;/span&gt;&lt;span class=&quot;phone-dot unread&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;sns-profile&quot;&gt;
-    &lt;div class=&quot;sns-avatar&quot;&gt;你&lt;/div&gt;
-    &lt;div&gt;
-      &lt;div class=&quot;sns-profile-name&quot;&gt;你的个人账号&lt;/div&gt;
-      &lt;div class=&quot;sns-profile-meta&quot;&gt;Skyline Horizon 现场记录&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;sns-feed&quot;&gt;
-    &lt;div class=&quot;sns-post&quot;&gt;
-      &lt;div class=&quot;sns-post-head&quot;&gt;
-        &lt;div class=&quot;sns-avatar small&quot;&gt;你&lt;/div&gt;
-        &lt;div&gt;
-          &lt;div class=&quot;sns-name&quot;&gt;你&lt;/div&gt;
-          &lt;div class=&quot;sns-time&quot;&gt;刚刚 · 来自移动端&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sns-text&quot;&gt;最近去演出太多次，都没有什么新衣服穿了。&lt;/div&gt;
-      &lt;div class=&quot;sns-actions&quot;&gt;&lt;span&gt;转发 0&lt;/span&gt;&lt;span&gt;评论 0&lt;/span&gt;&lt;span&gt;点赞 3&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;sns-inbox-card&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;sns-inbox-title&quot;&gt;私信&lt;/div&gt;
-        &lt;div class=&quot;sns-inbox-preview&quot;&gt;
-        &lt;&lt;link &quot;Caleb 发来一条私信&quot;&gt;&gt;
-          &lt;&lt;set $calebHairclipRebought = true&gt;&gt;
-          &lt;&lt;goto &quot;Caleb-8&quot;&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;sns-badge&quot;&gt;1&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;sns-tabbar&quot;&gt;&lt;span&gt;首页&lt;/span&gt;&lt;span&gt;发现&lt;/span&gt;&lt;span class=&quot;active&quot;&gt;消息&lt;/span&gt;&lt;span&gt;我的&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'feed',
+  title: '首页',
+  time: '00:12',
+  battery: '71%',
+  unread: true,
+  activeTab: 'messages',
+  user: { name: '你', avatar: '你', handle: '@live_notes', meta: 'Skyline Horizon 现场记录' },
+  posts: [
+    { author: '你', avatar: '你', text: '最近去演出太多次，都没有什么新衣服穿了。', likes: 3 }
+  ],
+  messageAction: {
+    id: 'open-caleb-dm',
+    title: 'Caleb',
+    preview: '之前的小飞机发夹很适合你。最近怎么没戴？',
+    badge: '1',
+    profile: { name: 'Caleb', avatar: 'C' },
+    setVars: { calebHairclipRebought: true },
+    goto: 'Caleb-8'
+  }
+});
+&lt;/script&gt;
 &lt;&lt;else&gt;&gt;
-&lt;div class=&quot;caleb-sns sns-app phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:11&lt;/span&gt;&lt;span&gt;5G  72%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;个人主页&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;sns-profile&quot;&gt;
-    &lt;div class=&quot;sns-avatar&quot;&gt;你&lt;/div&gt;
-    &lt;div&gt;
-      &lt;div class=&quot;sns-profile-name&quot;&gt;你的个人账号&lt;/div&gt;
-      &lt;div class=&quot;sns-profile-meta&quot;&gt;Skyline Horizon 现场记录&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;sns-compose&quot;&gt;
-    &lt;div class=&quot;sns-compose-top&quot;&gt;
-      &lt;div class=&quot;sns-avatar small&quot;&gt;你&lt;/div&gt;
-      &lt;div class=&quot;sns-compose-label&quot;&gt;发布动态&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;sns-compose-box&quot;&gt;最近去演出太多次，都没有什么新衣服穿了。&lt;/div&gt;
-    &lt;div class=&quot;sns-compose-tools&quot;&gt;&lt;span&gt;图片&lt;/span&gt;&lt;span&gt;话题&lt;/span&gt;&lt;span&gt;位置&lt;/span&gt;&lt;/div&gt;
-    &lt;div class=&quot;phone-action-row&quot;&gt;
-    &lt;&lt;link &quot;发布&quot;&gt;&gt;
-      &lt;&lt;set $calebSnsPosted = true&gt;&gt;
-      &lt;&lt;goto &quot;Caleb-8&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;sns-tabbar&quot;&gt;&lt;span class=&quot;active&quot;&gt;首页&lt;/span&gt;&lt;span&gt;发现&lt;/span&gt;&lt;span&gt;消息&lt;/span&gt;&lt;span&gt;我的&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Caleb-8-Final" tags="" position="1025,3975" size="100,100">&lt;div class=&quot;caleb-sns phone-shell&quot;&gt;
-  &lt;div class=&quot;phone-status&quot;&gt;&lt;span&gt;00:17&lt;/span&gt;&lt;span&gt;5G  69%&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-titlebar&quot;&gt;&lt;span class=&quot;phone-back&quot;&gt;‹&lt;/span&gt;&lt;span&gt;Caleb&lt;/span&gt;&lt;span class=&quot;phone-dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;
-  &lt;div class=&quot;phone-chat&quot;&gt;
-    &lt;div class=&quot;msg left&quot;&gt;之前的小飞机发夹很适合你。最近怎么没戴？&lt;/div&gt;
-    &lt;div class=&quot;msg right&quot;&gt;笑死，把你从我家装的监控拆了吧。&lt;/div&gt;
-    &lt;&lt;if $calebInviteTone is &quot;teasing&quot;&gt;&gt;
-    &lt;div class=&quot;msg right&quot;&gt;下次别躲着了，看到我就来打招呼。&lt;/div&gt;
-    &lt;&lt;else&gt;&gt;
-    &lt;div class=&quot;msg right&quot;&gt;我下次就带，到时候记得来找我打招呼。&lt;/div&gt;
-    &lt;&lt;/if&gt;&gt;
-    &lt;div id=&quot;caleb8-typing&quot; class=&quot;phone-typing show&quot;&gt;Caleb 正在输入中&lt;/div&gt;
-    &lt;div id=&quot;caleb8-final-reply&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;&lt;snsRoot &quot;caleb8-sns&quot;&gt;&gt;
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-sns',
+  view: 'compose',
+  title: '发微博',
+  time: '00:11',
+  battery: '72%',
+  activeTab: 'home',
+  user: { name: '你', avatar: '你', handle: '@live_notes', meta: 'Skyline Horizon 现场记录' },
+  composeText: '最近去演出太多次，都没有什么新衣服穿了。',
+  primaryAction: {
+    id: 'publish-post',
+    label: '发布',
+    setVars: { calebSnsPosted: true },
+    goto: 'Caleb-8'
+  }
+});
+&lt;/script&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Caleb-8-Final" tags="" position="1025,3975" size="100,100">&lt;&lt;snsRoot &quot;caleb8-final-sns&quot;&gt;&gt;
 &lt;div id=&quot;caleb8-continue&quot; class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+renderSnsApp({
+  id: 'caleb8-final-sns',
+  view: 'thread',
+  title: 'Caleb',
+  time: '00:17',
+  battery: '69%',
+  contact: 'Caleb',
+  messages: [
+    { who: 'left', text: '之前的小飞机发夹很适合你。最近怎么没戴？' },
+    { who: 'right', text: '笑死，把你从我家装的监控拆了吧。' },
+    &lt;&lt;if $calebInviteTone is &quot;teasing&quot;&gt;&gt;
+    { who: 'right', text: '下次别躲着了，看到我就来打招呼。' }
+    &lt;&lt;else&gt;&gt;
+    { who: 'right', text: '我下次就带，到时候记得来找我打招呼。' }
+    &lt;&lt;/if&gt;&gt;
+  ]
+});
+document.querySelector('#caleb8-final-sns .sns-thread').insertAdjacentHTML('beforeend', '&lt;div id=&quot;caleb8-typing&quot; class=&quot;phone-typing show&quot;&gt;Caleb 正在输入中&lt;/div&gt;&lt;div id=&quot;caleb8-final-reply&quot;&gt;&lt;/div&gt;');
+&lt;/script&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;replace &quot;#caleb8-typing&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
@@ -2116,6 +2471,14 @@ Q群：893010016
   &lt;/div&gt;
 
 &lt;/div&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;snsRoot&quot;&gt;&gt;
+&lt;div id=&quot;&lt;&lt;= _args[0] &gt;&gt;&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;snsContinue&quot;&gt;&gt;
+&lt;div class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;&lt;link _args[0] _args[1]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/div&gt;
 &lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="故事的开始" tags="" position="500,200" size="200,200">&lt;&lt;set $favorYizhou = 0&gt;&gt;
 &lt;&lt;set $favorCaleb = 0&gt;&gt;
 &lt;&lt;set $darkness = 0&gt;&gt;
