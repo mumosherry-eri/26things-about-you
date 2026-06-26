@@ -1880,7 +1880,7 @@ $(document).on(':passagedisplay', function () {
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
 
 &lt;div id=&quot;ambitious-sns-home&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'ambitious-sns-home',
   view: 'notifications',
   title: '消息',
@@ -1899,7 +1899,7 @@ $(document).on(':passagedisplay', function () {
       goto: 'Chat_Caleb1'
     }
   ]
-});&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Ambitious_Noconnect" tags="" position="500,950" size="100,100">Skyline Horizon的演出结束了，朋友也不知道去哪浪，根本找不见人影，你有些累了。收拾好包走出酒吧。微凉的夜风把在店里的燥热吹得一干二净，耳中依旧嗡嗡作响。你慢悠悠走在街上，回味着夏以昼的模样与气息。
+})&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Ambitious_Noconnect" tags="" position="500,950" size="100,100">Skyline Horizon的演出结束了，朋友也不知道去哪浪，根本找不见人影，你有些累了。收拾好包走出酒吧。微凉的夜风把在店里的燥热吹得一干二净，耳中依旧嗡嗡作响。你慢悠悠走在街上，回味着夏以昼的模样与气息。
 
 上了地铁，你专心地看着乐队账号的每一条评论，还顺藤摸瓜找到了他们跟粉丝互动用的公开小号，也顺手点了个关注。刷着刷着，你停在一条夏以昼练习的视频——宽松的黑T恤、手腕翻飞的节奏感，让你忍不住在评论区敲下：“不是我说，人怎么能帅成这样啊？”
 
@@ -1908,7 +1908,7 @@ $(document).on(':passagedisplay', function () {
 直到地铁广播报站，你才抬起头。换乘的站台很空，脚步声在狭长的通道里回荡。你随手拿起手机，屏幕突然亮了——一条新的私信提示跳出来。
 
 &lt;div id=&quot;ambitious-sns-noconnect&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'ambitious-sns-noconnect',
   view: 'notifications',
   title: '消息',
@@ -1927,7 +1927,7 @@ $(document).on(':passagedisplay', function () {
       goto: 'Chat_Caleb1'
     }
   ]
-});&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Blur" tags="" position="287.5,1325" size="100,100">&lt;&lt;set $darkness += 5&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Blur" tags="" position="287.5,1325" size="100,100">&lt;&lt;set $darkness += 5&gt;&gt;
 
 进了家门，你脱掉高跟鞋，揉了揉自己有些酸痛的小腿和脚踝。今晚的热闹好像还在皮肤下滚动，耳朵里的嗡鸣已经消散殆尽，身上缭绕的复杂味道在房间中开始弥散，你又想起夏以昼身上那股淡淡的皮革味。是你在其他人身上没有闻到过的香水。你思考了一会，向新好友发了消息：
 
@@ -2121,7 +2121,7 @@ renderPhoneChat({
 [[继续-&gt;Caleb-8]]</tw-passagedata><tw-passagedata pid="34" name="Caleb-8" tags="" position="725,3975" size="100,100">&lt;&lt;run ensureCalebChapterState()&gt;&gt;
 &lt;&lt;if $calebAskedToMeet&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
   title: 'Caleb',
@@ -2139,12 +2139,12 @@ renderPhoneChat({
     { who: 'right', text: '我下次就带，到时候记得来找我打招呼。' },
     { who: 'left', text: '我们不一定站得很近吧……如果有机会肯定会跟你打招呼的。' }
   ])
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 
 &lt;div class=&quot;phone-complete phone-complete-outside&quot;&gt;[[继续-&gt;Caleb-9]]&lt;/div&gt;
 &lt;&lt;elseif $calebHairclipViewed and $calebFirstReplySent is false&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
   title: 'Caleb',
@@ -2160,12 +2160,12 @@ renderPhoneChat({
     setVars: { calebFirstReplySent: true },
     goto: 'Caleb-8'
   }
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 
 你伸手拿过发夹，在手中轻轻摩挲着飞机的机翼，脸上露出了你自己也没意识到的笑容。
 &lt;&lt;elseif $calebHairclipViewed&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
   title: 'Caleb',
@@ -2200,10 +2200,10 @@ renderPhoneChat({
       }
     }
   ]
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 &lt;&lt;elseif $calebHairclipRebought&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'thread',
   title: 'Caleb',
@@ -2219,7 +2219,7 @@ renderPhoneChat({
     label: '查看小飞机发夹',
     goto: 'Caleb-8-Hairclip'
   }
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 
 你愣了。那个发夹早在前段时间的一场演出后不慎遗失，一直没找到。可你实在喜欢，犹豫了许久，还是重新买了同款。
 
@@ -2227,7 +2227,7 @@ renderPhoneChat({
 
 &lt;&lt;elseif $calebSnsPosted&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'feed',
   title: '首页',
@@ -2248,10 +2248,10 @@ renderPhoneChat({
     setVars: { calebHairclipRebought: true },
     goto: 'Caleb-8'
   }
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;div id=&quot;caleb8-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-sns',
   view: 'compose',
   title: '发微博',
@@ -2266,11 +2266,11 @@ renderPhoneChat({
     setVars: { calebSnsPosted: true },
     goto: 'Caleb-8'
   }
-});&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="Caleb-8-Final" tags="" position="1025,3975" size="100,100">&lt;div id=&quot;caleb8-final-sns&quot; class=&quot;sns-phone phone-shell&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;caleb8-continue&quot; class=&quot;phone-complete phone-complete-outside&quot;&gt;&lt;/div&gt;
 
-&lt;&lt;run renderSnsApp({
+&lt;&lt;done&gt;&gt;&lt;&lt;run renderSnsApp({
   id: 'caleb8-final-sns',
   view: 'thread',
   title: 'Caleb',
@@ -2285,8 +2285,8 @@ renderPhoneChat({
   ] : [
     { who: 'right', text: '我下次就带，到时候记得来找我打招呼。' }
   ])
-});&gt;&gt;
-&lt;&lt;run document.querySelector('#caleb8-final-sns .sns-thread').insertAdjacentHTML('beforeend', '&lt;div id=&quot;caleb8-typing&quot; class=&quot;phone-typing show&quot;&gt;Caleb 正在输入中&lt;/div&gt;&lt;div id=&quot;caleb8-final-reply&quot;&gt;&lt;/div&gt;')&gt;&gt;
+})&gt;&gt;&lt;&lt;/done&gt;&gt;
+&lt;&lt;done&gt;&gt;&lt;&lt;run document.querySelector('#caleb8-final-sns .sns-thread').insertAdjacentHTML('beforeend', '&lt;div id=&quot;caleb8-typing&quot; class=&quot;phone-typing show&quot;&gt;Caleb 正在输入中&lt;/div&gt;&lt;div id=&quot;caleb8-final-reply&quot;&gt;&lt;/div&gt;')&gt;&gt;&lt;&lt;/done&gt;&gt;
 
 &lt;&lt;timed 2s&gt;&gt;
   &lt;&lt;replace &quot;#caleb8-typing&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
